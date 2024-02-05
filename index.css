@@ -20,12 +20,12 @@ li {
   margin: 30px;
   padding: 0;
   text-align: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s, background-color 0.3s;
 }
 
 li:hover {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.4);
   background-color: lightgray;
 }
 
@@ -39,11 +39,18 @@ a {
   color: inherit;
 }
 
+h1 {
+  text-align: center;
+}
+
 .container {
   margin: 0 auto;
   width: 75%;
 }
 
-h1 {
-  text-align: center;
+.disable {
+  pointer-events: none;
+  cursor: default;
+  background-color: #707070;
+  color: #bbb;
 }
