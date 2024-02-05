@@ -1,61 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>File Tree</title>
-  <style>
-    ul {
-      list-style-type: none;
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 5px;
-    }
-    .folder {
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>File Tree</h1>
-  <ul id="fileTree">
-    <!-- File tree will be dynamically generated here -->
-  </ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+          }
 
-  <script>
-    function createFileTree(data, parent) {
-      var ul = document.createElement('ul');
-      parent.appendChild(ul);
+          li {
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s, background-color 0.3s;
+          }
 
-      data.forEach(function (item) {
-        var li = document.createElement('li');
-        ul.appendChild(li);
+          li:hover {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            background-color: lightgray;
+          }
 
-        var link = document.createElement('a');
-        link.href = item.path;
-        link.textContent = item.name;
-        li.appendChild(link);
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+          }
 
-        if (item.type === 'dir') {
-          li.classList.add('folder');
-          createFileTree(item.children, li);
-        }
-      });
-    }
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.github.com/repos/lazynora/webdesign/contents', true);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        var data = JSON.parse(xhr.responseText);
-        createFileTree(data, document.getElementById('fileTree'));
-      } else {
-        console.error('Error:', xhr.status);
-      }
-    };
-    xhr.onerror = function() {
-      console.error('Request failed');
-    };
-    xhr.send();
-  </script>
-</body>
+          .container {
+            margin: 0 auto;
+            width: 75%;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <ul>
+            <li><a href="/TH1">TH1</a></li>
+            <li><a href="/TH2">TH2</a></li>
+            <li><a href="/TH3">TH3</a></li>
+            <li><a href="/TH4">TH4</a></li>
+            <li><a href="/TH5">TH5</a></li>
+            <li><a href="/TH6">TH6</a></li>
+            <li><a href="/TH7">TH7</a></li>
+            <li><a href="/TH8">TH8</a></li>
+            <li><a href="/TH9">TH9</a></li>
+            <li><a href="/TH10">TH10</a></li>
+            <li><a href="/TH11">TH11</a></li>
+            <li><a href="/TH12">TH12</a></li>
+            <li><a href="/TH13">TH13</a></li>
+            <li><a href="/TH14">TH14</a></li>
+            <li><a href="/TH15">TH15</a></li>
+          </ul>
+        </div>
+      </body>
+    </html>
+  </body>
 </html>
