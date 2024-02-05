@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>File Tree Navigation</title>
+  <title>File Tree</title>
   <style>
     ul {
       list-style-type: none;
+      padding-left: 20px;
     }
-    ul li {
-      margin-left: 20px;
+    li {
+      margin-bottom: 5px;
+    }
+    .folder {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>File Tree Navigation</h1>
-  <ul id="fileTree"></ul>
+  <h1>File Tree</h1>
+  <ul id="fileTree">
+    <!-- File tree will be dynamically generated here -->
+  </ul>
 
   <script>
-    function createFileTree(files, parentElement) {
-      files.forEach(file => {
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = file.path;
-        link.textContent = file.name;
-        listItem.appendChild(link);
-        parentElement.appendChild(listItem);
+    function createFileTree(data, parent) {
+      var ul = document.createElement('ul');
+      parent.appendChild(ul);
 
-        if (file.type === 'directory' && file.children) {
-          const nestedList = document.createElement('ul');
-          listItem.appendChild(nestedList);
-          createFileTree(file.children, nestedList);
+      data.forEach(function (item) {
+        var li = document.createElement('li');
+        ul.appendChild(li);
+
+        var link = document.createElement('a');
+        link.href = item.path;
+        link.textContent = item.name;
+        li.appendChild(link);
+
+        if (item.type === 'dir') {
+          li.classList.add('folder');
+          createFileTree(item.children, li);
         }
       });
     }
 
-    fetch('https://api.github.com/repos/lazynora/webdesign/contents', {
-      headers: {
-        Accept: 'application/vnd.github.v3+json'
-      }
-    })
-      .then(response => response.json())
-      .then(files => {
-        const fileTree = document.getElementById('fileTree');
-        createFileTree(files, fileTree);
+    fetch('https://api.github.com/repos/lazynora/webdesign/contents')
+      .then(function (response) {
+        return response.json();
       })
-      .catch(error => {
-        console.error('Error retrieving file tree:', error);
+      .then(function (data) {
+        createFileTree(data, document.getElementById('fileTree'));
+      })
+      .catch(function (error) {
+        console.error('Error:', error);
       });
   </script>
 </body>
