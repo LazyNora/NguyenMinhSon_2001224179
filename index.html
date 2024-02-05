@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Tree Navigation</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+    ul li {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>File Tree Navigation</h1>
+  <ul id="fileTree"></ul>
+
+  <script>
+    function createFileTree(files, parentElement) {
+      files.forEach(file => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = file.path;
+        link.textContent = file.name;
+        listItem.appendChild(link);
+        parentElement.appendChild(listItem);
+
+        if (file.type === 'directory' && file.children) {
+          const nestedList = document.createElement('ul');
+          listItem.appendChild(nestedList);
+          createFileTree(file.children, nestedList);
+        }
+      });
+    }
+
+    fetch('https://api.github.com/repos/lazynora/webdesign/contents', {
+      headers: {
+        Accept: 'application/vnd.github.v3+json'
+      }
+    })
+      .then(response => response.json())
+      .then(files => {
+        const fileTree = document.getElementById('fileTree');
+        createFileTree(files, fileTree);
+      })
+      .catch(error => {
+        console.error('Error retrieving file tree:', error);
+      });
+  </script>
+</body>
+</html>
