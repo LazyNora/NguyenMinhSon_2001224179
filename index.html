@@ -42,16 +42,20 @@
       });
     }
 
-    fetch('https://api.github.com/repos/lazynora/webdesign/contents')
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://api.github.com/repos/lazynora/webdesign/contents', true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
         createFileTree(data, document.getElementById('fileTree'));
-      })
-      .catch(function (error) {
-        console.error('Error:', error);
-      });
+      } else {
+        console.error('Error:', xhr.status);
+      }
+    };
+    xhr.onerror = function() {
+      console.error('Request failed');
+    };
+    xhr.send();
   </script>
 </body>
 </html>
