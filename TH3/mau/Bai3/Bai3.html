@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame col</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 20% 20% 30% 30%;
+        font-size: 14px;
+        column-gap: 0;
+      }
+      iframe {
+        height: 100vh;
+        border: 2px solid black;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe name="Logo" src="./Logo.html" frameborder="0" noresize></iframe>
+    <iframe name="Left" src="./Left.html" frameborder="0" noresize></iframe>
+    <iframe
+      name="Main 1"
+      src="./Main1.html"
+      frameborder="0"
+      scrolling="no"
+      style="padding: 10px"
+    ></iframe>
+    <iframe name="Main 2" src="./Main2.html" frameborder="0" style="padding: 20px;"></iframe>
+  </body>
+</html>
