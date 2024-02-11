@@ -48,7 +48,14 @@ h1 {
   width: 75%;
 }
 
-.disable {
+ul.disable > li > a {
+  pointer-events: none;
+  cursor: default;
+  background-color: #707070;
+  color: #bbb;
+}
+
+li.disable > a {
   pointer-events: none;
   cursor: default;
   background-color: #707070;
