@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame Rows</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 25% 75%;
+        column-gap: 0;
+        height: 100vh;
+        border-collapse: collapse;
+      }
+      iframe {
+        box-sizing: border-box;
+        border: 2px solid black;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      name="Logo"
+      src="../../mau/Bai3/Logo.html"
+      frameborder="0"
+      scrolling="no"
+      style="grid-column-start: 1; grid-column-end: -1"
+    ></iframe>
+    <iframe name="Left" src="../../mau/Bai4/Left.html" frameborder="0"></iframe>
+    <iframe
+      name="Main"
+      src="../../mau/Bai4/Main1.html"
+      frameborder="0"
+    ></iframe>
+  </body>
+</html>
