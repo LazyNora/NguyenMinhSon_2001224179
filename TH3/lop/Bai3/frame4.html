@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame 4</title>
+    <style>
+      body {
+        height: 1900px;
+        width: 1600px;
+        border: 5px solid blue;
+        line-height: 0%;
+      }
+      #frame-container {
+        display: flex;
+        height: 100%;
+      }
+      iframe {
+        box-sizing: border-box;
+        border: 3px solid lightgreen;
+        width: 100%;
+        height: 100%;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row" style="height: 20%">
+      <div class="column" style="width: 20%">
+        <iframe id="frame1" src="./content.html"></iframe>
+      </div>
+      <div class="column" style="width: 80%">
+        <iframe id="frame2" src="./content.html"></iframe>
+        <iframe id="frame3" src="./content.html"></iframe>
+      </div>
+    </div>
+    <div class="row" style="height: 60%">
+      <div class="column" style="width: 50%">
+        <iframe id="frame4" src="./content.html"></iframe>
+        <iframe id="frame5" src="./content.html"></iframe>
+      </div>
+      <div class="column" style="width: 50%">
+        <iframe id="frame6" src="./content.html"></iframe>
+      </div>
+    </div>
+    <div class="row" style="height: 20%">
+      <iframe id="frame7" src="./content.html"></iframe>
+    </div>
+  </body>
+</html>
