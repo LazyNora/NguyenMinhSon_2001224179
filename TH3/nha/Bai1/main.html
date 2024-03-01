@@ -4,125 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main</title>
-  </head>
-  <body>
-    <div
-      style="
+    <style>
+      .container {
         margin-top: 40px;
         width: 100%;
         display: grid;
         column-gap: 30px;
         row-gap: 40px;
         grid-template-columns: 1fr 1fr 1fr;
-      "
-    >
-      <div style="text-align: center">
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="images/post_1.webp"
-            style="
-              width: 100%;
-              max-height: 250px;
-              height: 250px;
-              object-fit: cover;
-            "
-          />
-          <p style="font-size: 18px; margin-top: 16px">
-            Lý do một số nhà văn lớn thống trị ngành xuất bản
-          </p>
-        </div>
+      }
+      .item_img {
+        width: 100%;
+        max-height: 250px;
+        height: 250px;
+        object-fit: contain;
+      }
+      .item_name {
+        font-weight: bold;
+      }
+      .item_name::before {
+        content: url(./img/icon_news_new.gif);
+        vertical-align: super;
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        color: blue;
+      }
+      .item p {
+        margin: 0;
+      }
+      .item_price {
+        margin-top: 16px;
+      }
+      .item_price span {
+        color: red;
+      }
+      .item_details {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- item 1 -->
+      <div class="item">
+        <p class="item_name">Apple Ipad 32G Wifi+3G (MC496ZP/A)</p>
+        <img src="./img/images569754_vnm_2010_302957.JPG" class="item_img" />
+        <p class="item_price">Giá: <span>13,585,000 VNĐ</span></p>
+        <p class="item_details">xem chi tiết</p>
       </div>
-      <div style="text-align: center">
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="images/post_1.webp"
-            style="
-              width: 100%;
-              max-height: 250px;
-              height: 250px;
-              object-fit: cover;
-            "
-          />
-          <p style="font-size: 18px; margin-top: 16px">
-            Lý do một số nhà văn lớn thống trị ngành xuất bản
-          </p>
-        </div>
+      <!-- item 2 -->
+      <div class="item">
+        <p class="item_name">Apple Ipad 2 64G Wifi+3G MC0099P/B</p>
+        <img src="./img/sdajsdkajsd.jpeg" class="item_img" />
+        <p class="item_price">Giá: <span>28,312,000 VNĐ</span></p>
+        <p class="item_details">xem chi tiết</p>
       </div>
-      <div style="text-align: center">
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="images/post_1.webp"
-            style="
-              width: 100%;
-              max-height: 250px;
-              height: 250px;
-              object-fit: cover;
-            "
-          />
-          <p style="font-size: 18px; margin-top: 16px">
-            Lý do một số nhà văn lớn thống trị ngành xuất bản
-          </p>
-        </div>
+      <!-- item 3 -->
+      <div class="item">
+        <p class="item_name">SAMSUNG GALA TAB P1000</p>
+        <img src="./img/asdjhsadfjjsdf.jpeg" class="item_img" />
+        <p class="item_price">Giá: <span>12,100,000 VNĐ</span></p>
+        <p class="item_details">xem chi tiết</p>
       </div>
-      <div style="text-align: center">
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="images/post_1.webp"
-            style="
-              width: 100%;
-              max-height: 250px;
-              height: 250px;
-              object-fit: cover;
-            "
-          />
-          <p style="font-size: 18px; margin-top: 16px">
-            Lý do một số nhà văn lớn thống trị ngành xuất bản
-          </p>
-        </div>
+      <!-- item 4 -->
+      <div class="item">
+        <p class="item_name">HP DM41102TX (XP54)</p>
+        <img src="./img/imageshththt.jpeg" class="item_img" />
+        <p class="item_price">Giá: <span>13,000,000 VNĐ</span></p>
+        <p class="item_details">xem chi tiết</p>
       </div>
-      <div style="text-align: center">
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="images/post_1.webp"
-            style="
-              width: 100%;
-              max-height: 250px;
-              height: 250px;
-              object-fit: cover;
-            "
-          />
-          <p style="font-size: 18px; margin-top: 16px">
-            Lý do một số nhà văn lớn thống trị ngành xuất bản
-          </p>
-        </div>
+      <!-- item 5 -->
+      <div class="item">
+        <p class="item_name">MACBOOK Pro MC7ZP/A</p>
+        <img src="./img/imagessfsdgfjffd.jpeg" class="item_img" />
+        <p class="item_price">Giá: <span>21,888,000 VNĐ</span></p>
+        <p class="item_details">xem chi tiết</p>
       </div>
-      <div style="text-align: center">
-        <div
-          style="display: flex; flex-direction: column; align-items: flex-start"
-        >
-          <img
-            src="images/post_1.webp"
-            style="
-              width: 100%;
-              max-height: 250px;
-              height: 250px;
-              object-fit: cover;
-            "
-          />
-          <p style="font-size: 18px; margin-top: 16px">
-            Lý do một số nhà văn lớn thống trị ngành xuất bản
-          </p>
-        </div>
+      <!-- item 6 -->
+      <div class="item">
+        <p class="item_name">Sony Vaio VPC-SB)</p>
+        <img src="./img/images124354fgdfgdas.jpeg" class="item_img" />
+        <p class="item_price">Giá: <span>32,999,000 VNĐ</span></p>
+        <p class="item_details">xem chi tiết</p>
       </div>
     </div>
   </body>
