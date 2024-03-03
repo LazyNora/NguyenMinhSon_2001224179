@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <form
+      method="get"
+      style="
+        border: #666 solid 1px;
+        width: 450px;
+        margin: 0 auto;
+        padding: 5px 0 0 5px;
+      "
+    >
+      <div>
+        <label for="username">Username: </label>
+        <input
+          type="text"
+          name="account"
+          id="username"
+          required
+          autocomplete="off"
+        />
+      </div>
+      <div style="margin-block: 3px">
+        <label for="password">Password: </label>
+        <input
+          type="password"
+          name="account"
+          id="password"
+          size="40"
+          required
+        />
+      </div>
+      <input type="submit" value="ĐĂNG NHẬP" />
+      <hr />
+      <div style="display: inline-block; vertical-align: top">
+        <span>Hoppy: </span>
+      </div>
+      <div style="display: inline-block">
+        <div>
+          <label for="music">
+            <input type="checkbox" name="hoppy" id="music" value="1" />
+            Music
+          </label>
+        </div>
+        <div>
+          <label for="film">
+            <input type="checkbox" name="hoppy" id="film" value="2" />
+            Film
+          </label>
+        </div>
+        <div>
+          <label for="sport">
+            <input type="checkbox" name="hoppy" id="sport" value="3" />
+            Sport
+          </label>
+        </div>
+      </div>
+      <hr />
+      <div style="display: inline-block; vertical-align: top">
+        <span>Use for </span>
+      </div>
+      <div style="display: inline-block">
+        <div>
+          <label for="home">
+            <input type="radio" name="usefor" id="home" value="1" />
+            Home
+          </label>
+        </div>
+        <div>
+          <label for="business">
+            <input type="radio" name="usefor" id="business" value="2" />
+            Business
+          </label>
+        </div>
+        <div>
+          <label for="government">
+            <input type="radio" name="usefor" id="government" value="3" />
+            Government
+          </label>
+        </div>
+        <div>
+          <label for="education">
+            <input type="radio" name="usefor" id="education" value="3" />
+            Educational Institution
+          </label>
+        </div>
+        <div>
+          <label for="other">
+            <input type="radio" name="usefor" id="other" value="3" />
+            Other
+          </label>
+        </div>
+      </div>
+      <hr />
+      <input type="reset" value="Chuỗi reset" />
+      <hr />
+      <input type="submit" value="OK" />
+      <hr />
+      <hr />
+    </form>
+  </body>
+</html>

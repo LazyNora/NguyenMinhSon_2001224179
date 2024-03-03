@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        text-align: center;
+        color: purple;
+        font-weight: bold;
+      }
+      .container {
+        border: 1px solid gray;
+        margin: auto;
+        background: linear-gradient(to bottom, lightgray, white 25%);
+        width: 800px;
+        padding: 0 10px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form method="get" onsubmit="displayFormData(); return false;">
+        <p class="header">Thông Tin Đăng Nhập</p>
+        <table style="width: 100%; margin: auto">
+          <colgroup>
+            <col span="1" style="width: 12em" />
+          </colgroup>
+          <tr>
+            <td>Tên Đăng Nhập:</td>
+            <td>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                autocomplete="username"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Mật Khẩu:</td>
+            <td>
+              <input type="password" name="password" id="password" required />
+            </td>
+          </tr>
+          <tr>
+            <td>Nhập Lại Mật Khẩu:</td>
+            <td>
+              <input
+                type="password"
+                name="comfirmpassword"
+                id="comfirmpassword"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+        <p class="header">Thông Tin Cá Nhân</p>
+        <table style="width: 100%; margin: auto">
+          <colgroup>
+            <col span="1" style="width: 12em" />
+          </colgroup>
+          <tr>
+            <td>Họ Tên:</td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Ngày Sinh:</td>
+            <td>
+              <select name="day" id="day" required autocomplete="bday-day">
+                <option value="" hidden>Ngày</option>
+              </select>
+              <select
+                name="month"
+                id="month"
+                required
+                autocomplete="bday-month"
+              >
+                <option value="" hidden>Tháng</option>
+              </select>
+              <select name="year" id="year" required autocomplete="bday-year">
+                <option value="" hidden>Năm</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Giới tính</td>
+            <td>
+              <input
+                type="radio"
+                name="gender"
+                id="male"
+                value="0"
+                checked
+                required
+              />
+              <label for="male">Nam</label>
+              <input
+                type="radio"
+                name="gender"
+                id="female"
+                value="1"
+                required
+              />
+              <label for="female">Nữ</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Địa chỉ:</td>
+            <td>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                style="height: 8em; width: 70%"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Số điện thoại:</td>
+            <td><input type="tel" id="phone" /></td>
+          </tr>
+          <tr>
+            <td>Sở thích</td>
+            <td>
+              <input
+                type="text"
+                name="hobby"
+                id="hobby"
+                style="height: 8em; width: 70%"
+              />
+            </td>
+          </tr>
+        </table>
+        <div style="text-align: center"><input type="submit" value="OK" /></div>
+      </form>
+    </div>
+    <script>
+      function displayFormData() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("comfirmpassword").value;
+        var name = document.getElementById("name").value;
+        var day = document.getElementById("day").value;
+        var month = document.getElementById("month").value;
+        var year = document.getElementById("year").value;
+        var gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        var address = document.getElementById("address").value;
+        var phone = document.getElementById("phone").value;
+        var hobby = document.getElementById("hobby").value;
+
+        var message =
+          "Username: " +
+          username +
+          "\nPassword: " +
+          password +
+          "\nConfirm Password: " +
+          confirmPassword +
+          "\nName: " +
+          name +
+          "\nDate of Birth: " +
+          day +
+          "/" +
+          month +
+          "/" +
+          year +
+          "\nGender: " +
+          (gender === "0" ? "Nam" : "Nữ") +
+          "\nAddress: " +
+          address +
+          "\nPhone: " +
+          phone +
+          "\nHobby: " +
+          hobby;
+
+        alert(message);
+      }
+    </script>
+    <script>
+      // Generate day options
+      var daySelect = document.getElementById("day");
+      for (var i = 1; i <= 31; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.text = i;
+        daySelect.appendChild(option);
+      }
+
+      // Generate month options
+      var monthSelect = document.getElementById("month");
+      for (var i = 1; i <= 12; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.text = i;
+        monthSelect.appendChild(option);
+      }
+
+      // Generate year options
+      var yearSelect = document.getElementById("year");
+      for (var i = 1940; i <= 2015; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.text = i;
+        yearSelect.appendChild(option);
+      }
+    </script>
+  </body>
+</html>
