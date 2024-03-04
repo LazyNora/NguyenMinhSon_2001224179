@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        text-align: left;
+        border: 1px solid black;
+        width: 900px;
+        margin: auto;
+        background-image: url(./img/pngtree-water-or-beer-condensation-droplets-on-yellow-glass-background-picture-image_1977873.jpg);
+        background-repeat: no-repeat;
+        background-clip: initial;
+        background-position: center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center; color: red">Thông Tin Khách Hàng</h1>
+      <form action="">
+        <table style="color: blue; font-weight: bold; vertical-align: middle">
+          <colgroup>
+            <col span="1" style="width: 10em" />
+          </colgroup>
+          <tr>
+            <td style="text-align: center">Tên khách hàng:</td>
+            <td><input type="text" name="name" style="width: 25em" /></td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Tình trạng:</td>
+            <td>
+              <select name="tinhtrang" id="khachhang" style="width: 12em">
+                <option value="1">Khách hàng VIP</option>
+                <option value="2">Khách hàng thường</option>
+                <option value="3" selected>Khách hàng mới</option>
+              </select>
+              <label
+                for="id-customer"
+                style="font-weight: normal; margin-left: 11em"
+                >Mã KH:</label
+              >
+              <input
+                type="text"
+                name="id-customer"
+                id="id-customer"
+                style="width: 6em"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Chọn khu:</td>
+            <td>
+              <input type="radio" name="area" id="khachsan" />
+              <label for="khachsan" style="color: black; font-weight: normal"
+                >Khách Sạn</label
+              >
+              <input type="radio" name="area" id="karaoke" />
+              <label for="karaoke" style="color: black; font-weight: normal"
+                >Karaoke</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <label for="id-room">Số Phòng: </label>
+              <input
+                type="text"
+                name="id-room"
+                id="id-room"
+                style="width: 10em"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="radio" name="area2" id="barclub" />
+              <label for="barclub" style="color: black; font-weight: normal"
+                >Bar Club</label
+              >
+              <input type="radio" name="area2" id="coffee" />
+              <label for="coffee" style="color: black; font-weight: normal"
+                >Coffee</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <label for="id-table">Số bàn: </label>
+              <input
+                type="text"
+                name="id-table"
+                id="id-table"
+                style="width: 11.35em"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Yêu cầu:</td>
+            <td>
+              <input
+                type="text"
+                name="request"
+                id="request"
+                style="height: 4em; width: 25em"
+              />
+            </td>
+          </tr>
+        </table>
+        <br />
+        <div style="text-align: center">
+          <input type="button" value="GỬI THÔNG TIN" id="submit" />
+        </div>
+      </form>
+      <p
+        style="
+          font-weight: bold;
+          color: red;
+          text-align: center;
+          margin-top: 3px;
+        "
+      >
+        Quý khách vui lòng điền thông tin đầy đủ trước khi đặt món ăn !!
+      </p>
+    </div>
+  </body>
+</html>
