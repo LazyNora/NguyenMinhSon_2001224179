@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài 3</title>
-    <link rel="stylesheet" href="./Bai3.css">
+    <link rel="stylesheet" href="./Bai3.css" />
   </head>
   <body>
     <div class="checkout-wrapper">
       <form id="checkout-form" class="processed-form">
         <div class="checkout-process">
-          <h3>Chọn địa chỉ nhận hàng</h3> 
+          <h3>Chọn địa chỉ nhận hàng</h3>
           <div class="step-1">
             <div class="place-shipping-wrapper">
               <div class="place-shipping-item">
@@ -116,11 +116,12 @@
                   <div class="input-wrapper">
                     <span class="input-wrapper__label" for="email">Email</span>
                     <input
-                      type="text"
-                      class="form-control not-validate"
+                      type="email"
+                      class="form-control"
                       id="email"
                       name="email"
                       value=""
+                      autocomplete="email"
                     />
                   </div>
                 </div>
@@ -265,6 +266,40 @@
                     >
                       <option value="" disabled="" selected="">
                         Chọn Phường / Xã
+                      </option>
+
+                      <option value="001" data-select2-id="117">
+                        Phường Tân Sơn Nhì
+                      </option>
+                      <option value="002" data-select2-id="118">
+                        Phường Tây Thạnh
+                      </option>
+                      <option value="003" data-select2-id="119">
+                        Phường Sơn Kỳ
+                      </option>
+                      <option value="004" data-select2-id="120">
+                        Phường Tân Quý
+                      </option>
+                      <option value="005" data-select2-id="121">
+                        Phường Tân Thành
+                      </option>
+                      <option value="006" data-select2-id="122">
+                        Phường Phú Thọ Hòa
+                      </option>
+                      <option value="007" data-select2-id="123">
+                        Phường Phú Thạnh
+                      </option>
+                      <option value="008" data-select2-id="124">
+                        Phường Phú Trung
+                      </option>
+                      <option value="009" data-select2-id="125">
+                        Phường Hòa Thạnh
+                      </option>
+                      <option value="010" data-select2-id="126">
+                        Phường Hiệp Tân
+                      </option>
+                      <option value="011" data-select2-id="127">
+                        Phường Tân Thới Hòa
                       </option>
                     </select>
                   </div>
