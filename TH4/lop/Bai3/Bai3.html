@@ -4,459 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài 3</title>
-    <style>
-      .checkout-wrapper__left-side {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        flex: 4;
-        padding: 1em;
-        max-width: 60%;
-      }
-      .cm-processed-form {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        margin-top: 20px;
-      }
-      .checkout-process {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-      }
-      h3 {
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        box-sizing: border-box;
-        margin-top: 0;
-        line-height: 1.2;
-        font-weight: 400;
-        margin-bottom: 1rem;
-        font-size: 1.25em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      span {
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        line-height: 1.2;
-        font-weight: 400;
-        box-sizing: border-box;
-        font-size: 16px;
-        color: #686868;
-      }
-      a {
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        line-height: 1.2;
-        font-weight: 400;
-        font-size: 16px;
-        box-sizing: border-box;
-        text-decoration: none;
-        background-color: transparent;
-        color: #3a7cbd;
-      }
-      .step-1 {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        margin-bottom: 1rem;
-        background: #fff;
-      }
-      .place-shipping-wrapper {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-      }
-      .place-shipping-item {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        flex: 1;
-        max-width: 49%;
-        transition: all 0.3s ease;
-      }
-      .label-block {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        color: #3f3f3f;
-        position: relative;
-        display: flex;
-        margin-bottom: 0;
-        margin-left: 5px;
-      }
-      .custom-radio {
-        margin: 0;
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        overflow: visible;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        opacity: 0;
-        box-sizing: border-box;
-        padding: 0;
-      }
-      .place-shipping-box {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        color: #3f3f3f;
-        box-sizing: border-box;
-        flex: 1;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #ebebeb;
-        background: #f3f5f7;
-        transition: all 0.3s ease;
-        border-radius: 2px;
-      }
-      .radio-box {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        color: #3f3f3f;
-        box-sizing: border-box;
-        position: absolute;
-        top: 1.2rem;
-        right: 1.8rem;
-      }
-      .place-shipping-image {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        color: #3f3f3f;
-        width: 54px;
-        aspect-ratio: auto 54 / 36;
-        box-sizing: border-box;
-        border-style: none;
-        vertical-align: middle;
-        height: 3.6rem;
-        display: inline-block;
-      }
-      .place-shipping-title {
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        box-sizing: border-box;
-        margin-top: 0;
-        margin-left: 1.2rem;
-        margin-bottom: 0;
-        font-weight: 700;
-        font-size: 1em;
-        text-transform: uppercase;
-        color: #3f3f3f;
-      }
-      .custom-radio-2-box {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        margin-right: 0.5rem;
-        margin-left: 0.5em;
-        display: inline-flex;
-        justify-content: flex-end;
-        align-items: center;
-        color: #a6a6a6;
-      }
-      .custom-radio-2 {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        color: #a6a6a6;
-        box-sizing: border-box;
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        border: 1px solid;
-        position: relative;
-        background: #fff;
-      }
-      .custom-radio-2::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 0.5em;
-        height: 0.5em;
-        border-radius: 50%;
-        background: transparent;
-        transition: all 0.1s ease;
-      }
-
-      .custom-radio:checked
-        ~ .payment-method-box
-        .custom-radio-2-box
-        .custom-radio-2:after {
-        background: #e95851;
-      }
-
-      .custom-radio:checked ~ .payment-method-box .custom-radio-2-box {
-        color: #e95851;
-      }
-      .custom-radio:checked ~ .place-shipping-box {
-        border: 1px solid #e95851;
-        background: #fff;
-      }
-      .custom-radio:checked ~ .place-shipping-box .custom-radio-2-box {
-        color: #e95851;
-      }
-      .custom-radio:checked
-        ~ .place-shipping-box
-        .custom-radio-2-box
-        .custom-radio-2:after {
-        background: #e95851;
-      }
-      .address-shipping-box img.checked,
-      .checkout-wrapper__left-side .place-shipping-box img.checked {
-        display: none;
-      }
-      .custom-radio:checked ~ .place-shipping-box .unchecked {
-        display: none;
-      }
-      .custom-radio:checked ~ .place-shipping-box .checked {
-        display: inline-block;
-        color: #e95851;
-      }
-      .placeAtHomeInfo {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        box-sizing: border-box;
-        transition: max-height 0.25s ease-in-out, visibility 0.25s ease-in-out,
-          opacity 0.25s ease-in-out;
-        overflow: hidden;
-        max-height: 100%;
-        opacity: 1;
-        visibility: visible;
-      }
-      .address-shipping-wrapper {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        visibility: visible;
-        box-sizing: border-box;
-        display: flex;
-        width: 100%;
-        min-height: 115px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 10px 5px;
-      }
-      .form-group {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        visibility: visible;
-        box-sizing: border-box;
-        margin: 1rem 0;
-        margin-bottom: 1rem;
-        flex: 0 0 49%;
-      }
-      .input-wrapper {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        visibility: visible;
-        box-sizing: border-box;
-        flex: 1;
-        position: relative;
-      }
-      .input-wrapper__label {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        visibility: visible;
-        box-sizing: border-box;
-        display: inline-flex;
-        transform: translateY(-50%);
-        transition: all 0.2s ease;
-        pointer-events: none;
-        z-index: 1;
-        font-size: 14px;
-        color: #777;
-        position: absolute;
-        top: 0;
-        background: #fff;
-        padding: 3px 10px 3px 4px;
-        left: 10px;
-      }
-      .form-group em {
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        visibility: visible;
-        pointer-events: none;
-        box-sizing: border-box;
-        color: #ec2127;
-        font-style: normal;
-        display: inline-block;
-        padding-left: 4px;
-        font-size: small;
-      }
-      .form-control {
-        visibility: visible;
-        box-sizing: border-box;
-        margin: 0;
-        font-family: inherit;
-        overflow: visible;
-        display: block;
-        width: 100%;
-        height: calc(1.5em + 0.75rem + 2px);
-        font-weight: 400;
-        line-height: 1.5;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: none;
-        min-height: 42px;
-        color: transparent;
-        font-size: 15px;
-        padding: 5px 10px;
-        letter-spacing: 0.5px;
-      }
-      .custom-select {
-        visibility: visible;
-        box-sizing: border-box;
-        margin: 0;
-        font-family: inherit;
-        text-transform: none;
-        word-wrap: normal;
-        border: 0 !important;
-        clip: rect(0 0 0 0) !important;
-        clip-path: inset(50%) !important;
-        height: 1px !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-        position: absolute !important;
-        width: 1px !important;
-        white-space: nowrap !important;
-        display: inline-block;
-        font-weight: 400;
-        line-height: 1.5;
-        vertical-align: middle;
-        background: #fff
-          url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E")
-          no-repeat right 0.75rem center/8px 10px;
-        border-radius: 0.25rem;
-        appearance: none;
-        transition: none;
-        flex: 1;
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        color: #3f3f3f;
-      }
-      .select2-container {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        visibility: visible;
-        direction: ltr;
-        unicode-bidi: isolate;
-        margin: 0;
-        position: relative;
-        vertical-align: middle;
-        box-sizing: inherit;
-        display: inherit;
-        width: auto !important;
-      }
-      .selection {
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        text-align: left;
-        font-family: Roboto, sans-serif;
-        font-size: 1rem;
-        visibility: visible;
-        box-sizing: border-box;
-      }
-    </style>
+    <link rel="stylesheet" href="./Bai3.css">
   </head>
   <body>
-    <div class="checkout-wrapper__left-side">
-      <form
-        id="checkout-form"
-        novalidate="novalidate"
-        class="cm-processed-form"
-      >
+    <div class="checkout-wrapper">
+      <form id="checkout-form" class="processed-form">
         <div class="checkout-process">
-          <h3>Chọn địa chỉ nhận hàng</h3>
-          <div class="checkout-step collapse-component step-1">
+          <h3>Chọn địa chỉ nhận hàng</h3> 
+          <div class="step-1">
             <div class="place-shipping-wrapper">
               <div class="place-shipping-item">
                 <label for="placeAtHome" class="label-block">
                   <input
                     type="radio"
                     name="delivery_type"
-                    class="custom-radio collapse-radio"
+                    class="custom-radio"
                     id="placeAtHome"
                     value="1"
-                    data-collapse-wrapper="place-at-home"
                     checked
                   />
                   <div class="place-shipping-box">
@@ -486,9 +50,8 @@
                   <input
                     type="radio"
                     name="delivery_type"
-                    class="custom-radio collapse-radio"
+                    class="custom-radio"
                     id="placeAtStore"
-                    data-collapse-wrapper="place-at-store"
                     value="2"
                   />
                   <div class="place-shipping-box">
@@ -514,22 +77,19 @@
                 </label>
               </div>
             </div>
-            <div
-              class="placeAtHomeInfo radio-collapse-wrapper collapse-wrapper-show"
-              id="place-at-home"
-            >
+            <div class="placeAtHomeInfo">
               <div
-                class="address-shipping-wrapper Register_account"
+                class="address-shipping-wrapper"
                 id="address-shipping-wrapper"
               >
                 <div class="form-group">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini"
+                    <span class="input-wrapper__label"
                       >Họ và tên<em>(*)</em></span
                     >
                     <input
                       type="text"
-                      class="form-control label-mini"
+                      class="form-control"
                       id="full_name"
                       name="full_name"
                       value=""
@@ -539,12 +99,12 @@
                 </div>
                 <div class="form-group">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini"
+                    <span class="input-wrapper__label"
                       >Số điện thoại <em>(*)</em></span
                     >
                     <input
                       type="text"
-                      class="form-control label-mini"
+                      class="form-control"
                       id="phone_number"
                       name="phone_number"
                       value=""
@@ -554,429 +114,169 @@
                 </div>
                 <div class="form-group">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini" for="email"
-                      >Email</span
-                    >
+                    <span class="input-wrapper__label" for="email">Email</span>
                     <input
                       type="text"
-                      class="form-control label-mini not-validate"
+                      class="form-control not-validate"
                       id="email"
                       name="email"
                       value=""
                     />
                   </div>
                 </div>
-                <div class="form-group input-city">
+                <div class="form-group">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini"
+                    <span class="input-wrapper__label"
                       >Tỉnh / Thành Phố <em>(*)</em></span
                     >
                     <select
-                      class="custom-select label-mini select2-hidden-accessible"
+                      class="custom-select"
                       name="city_id"
                       id="city_id"
-                      data-id="001"
                       autocomplete="off"
                       required=""
-                      data-select2-id="city_id"
                       tabindex="-1"
                       aria-hidden="true"
                     >
-                      <option
-                        value=""
-                        disabled=""
-                        selected=""
-                        data-select2-id="2"
-                      >
+                      <option value="" disabled="" selected="">
                         Chọn tỉnh/Thành phố của bạn
                       </option>
-                      <option value="001" data-valid="0" data-select2-id="3">
-                        TP.HCM
-                      </option>
-                      <option value="027" data-city-valid="1">Hà Nội</option>
-                      <option value="002" data-valid="0">Bình Dương</option>
-                      <option value="031" data-city-valid="1">Hải Phòng</option>
-                      <option value="004" data-valid="0">Đồng Nai</option>
-                      <option value="061" data-city-valid="1">
-                        Quảng Ninh
-                      </option>
-                      <option value="012" data-valid="0">
-                        Bà Rịa - Vũng Tàu
-                      </option>
-                      <option value="054" data-city-valid="1">
-                        Thái Nguyên
-                      </option>
-                      <option value="040" data-valid="0">Lâm Đồng</option>
-                      <option value="045" data-city-valid="1">Phú Thọ</option>
-                      <option value="018" data-valid="0">Bình Thuận</option>
-                      <option value="041" data-city-valid="1">Nam Định</option>
-                      <option value="007" data-valid="0">Tiền Giang</option>
-                      <option value="055" data-city-valid="1">Thanh Hóa</option>
-                      <option value="006" data-valid="0">Bến Tre</option>
-                      <option value="042" data-city-valid="1">Nghệ An</option>
-                      <option value="003" data-valid="0">Vĩnh Long</option>
-                      <option value="056" data-city-valid="1">
-                        Thừa Thiên Huế
-                      </option>
-                      <option value="057" data-valid="0">Trà Vinh</option>
-                      <option value="021" data-city-valid="1">Đà Nẵng</option>
-                      <option value="010" data-valid="0">An Giang</option>
-                      <option value="049" data-city-valid="1">
-                        Quảng Ngãi
-                      </option>
-                      <option value="008" data-valid="0">Cần Thơ</option>
-                      <option value="016" data-city-valid="1">Bình Định</option>
-                      <option value="035" data-valid="0">Kiên Giang</option>
-                      <option value="024" data-city-valid="1">Gia Lai</option>
-                      <option value="011" data-valid="0">Bạc Liêu</option>
-                      <option value="022" data-city-valid="1">Đắk Lắk</option>
-                      <option value="020" data-valid="0">Cà Mau</option>
-                      <option value="034" data-city-valid="1">Khánh Hòa</option>
-                      <option value="014" data-valid="0">Bắc Giang</option>
-                      <option value="013" data-city-valid="1">Bắc Kạn</option>
-                      <option value="015" data-valid="0">Bắc Ninh</option>
-                      <option value="017" data-city-valid="1">
-                        Bình Phước
-                      </option>
-                      <option value="019" data-valid="0">Cao Bằng</option>
-                      <option value="025" data-city-valid="1">Hà Giang</option>
-                      <option value="026" data-valid="0">Hà Nam</option>
-                      <option value="029" data-city-valid="1">Hà Tĩnh</option>
-                      <option value="030" data-valid="0">Hải Dương</option>
-                      <option value="066" data-city-valid="1">Hậu Giang</option>
-                      <option value="032" data-valid="0">Hòa Bình</option>
-                      <option value="033" data-city-valid="1">Hưng Yên</option>
-                      <option value="036" data-valid="0">Kon Tum</option>
-                      <option value="037" data-city-valid="1">Lai Châu</option>
-                      <option value="038" data-valid="0">Lạng Sơn</option>
-                      <option value="039" data-city-valid="1">Lào Cai</option>
-                      <option value="005" data-valid="0">Long An</option>
-                      <option value="043" data-city-valid="1">Ninh Bình</option>
-                      <option value="044" data-valid="0">Ninh Thuận</option>
-                      <option value="046" data-city-valid="1">Phú Yên</option>
-                      <option value="047" data-valid="0">Quảng Bình</option>
-                      <option value="048" data-city-valid="1">Quảng Nam</option>
-                      <option value="009" data-valid="0">Quảng Trị</option>
-                      <option value="051" data-city-valid="1">Sóc Trăng</option>
-                      <option value="050" data-valid="0">Sơn La</option>
-                      <option value="052" data-city-valid="1">Tây Ninh</option>
-                      <option value="053" data-valid="0">Thái Bình</option>
-                      <option value="058" data-city-valid="1">
-                        Tuyên Quang
-                      </option>
-                      <option value="059" data-valid="0">Vĩnh Phúc</option>
-                      <option value="060" data-city-valid="1">Yên Bái</option>
-                      <option value="068" data-valid="0">Đắk Nông</option>
-                      <option value="067" data-city-valid="1">Điện Biên</option>
-                      <option value="023" data-valid="0">
-                        Đồng Tháp
-                      </option></select
-                    ><span
-                      class="select2 select2-container select2-container--default"
-                      dir="ltr"
-                      data-select2-id="1"
-                      style="width: 618.766px"
-                      ><span class="selection"
-                        ><span
-                          class="select2-selection select2-selection--single valid"
-                          role="combobox"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                          tabindex="0"
-                          aria-labelledby="select2-city_id-container"
-                          ><span
-                            class="select2-selection__rendered"
-                            id="select2-city_id-container"
-                            role="textbox"
-                            aria-readonly="true"
-                            title="TP.HCM"
-                            >TP.HCM</span
-                          ><span
-                            class="select2-selection__arrow"
-                            role="presentation"
-                            ><b role="presentation"></b></span></span></span
-                      ><span class="dropdown-wrapper" aria-hidden="true"></span
-                    ></span>
+                      <option value="001">TP.HCM</option>
+                      <option value="027">Hà Nội</option>
+                      <option value="002">Bình Dương</option>
+                      <option value="031">Hải Phòng</option>
+                      <option value="004">Đồng Nai</option>
+                      <option value="061">Quảng Ninh</option>
+                      <option value="012">Bà Rịa - Vũng Tàu</option>
+                      <option value="054">Thái Nguyên</option>
+                      <option value="040">Lâm Đồng</option>
+                      <option value="045">Phú Thọ</option>
+                      <option value="018">Bình Thuận</option>
+                      <option value="041">Nam Định</option>
+                      <option value="007">Tiền Giang</option>
+                      <option value="055">Thanh Hóa</option>
+                      <option value="006">Bến Tre</option>
+                      <option value="042">Nghệ An</option>
+                      <option value="003">Vĩnh Long</option>
+                      <option value="056">Thừa Thiên Huế</option>
+                      <option value="057">Trà Vinh</option>
+                      <option value="021">Đà Nẵng</option>
+                      <option value="010">An Giang</option>
+                      <option value="049">Quảng Ngãi</option>
+                      <option value="008">Cần Thơ</option>
+                      <option value="016">Bình Định</option>
+                      <option value="035">Kiên Giang</option>
+                      <option value="024">Gia Lai</option>
+                      <option value="011">Bạc Liêu</option>
+                      <option value="022">Đắk Lắk</option>
+                      <option value="020">Cà Mau</option>
+                      <option value="034">Khánh Hòa</option>
+                      <option value="014">Bắc Giang</option>
+                      <option value="013">Bắc Kạn</option>
+                      <option value="015">Bắc Ninh</option>
+                      <option value="017">Bình Phước</option>
+                      <option value="019">Cao Bằng</option>
+                      <option value="025">Hà Giang</option>
+                      <option value="026">Hà Nam</option>
+                      <option value="029">Hà Tĩnh</option>
+                      <option value="030">Hải Dương</option>
+                      <option value="066">Hậu Giang</option>
+                      <option value="032">Hòa Bình</option>
+                      <option value="033">Hưng Yên</option>
+                      <option value="036">Kon Tum</option>
+                      <option value="037">Lai Châu</option>
+                      <option value="038">Lạng Sơn</option>
+                      <option value="039">Lào Cai</option>
+                      <option value="005">Long An</option>
+                      <option value="043">Ninh Bình</option>
+                      <option value="044">Ninh Thuận</option>
+                      <option value="046">Phú Yên</option>
+                      <option value="047">Quảng Bình</option>
+                      <option value="048">Quảng Nam</option>
+                      <option value="009">Quảng Trị</option>
+                      <option value="051">Sóc Trăng</option>
+                      <option value="050">Sơn La</option>
+                      <option value="052">Tây Ninh</option>
+                      <option value="053">Thái Bình</option>
+                      <option value="058">Tuyên Quang</option>
+                      <option value="059">Vĩnh Phúc</option>
+                      <option value="060">Yên Bái</option>
+                      <option value="068">Đắk Nông</option>
+                      <option value="067">Điện Biên</option>
+                      <option value="023">Đồng Tháp</option>
+                    </select>
                   </div>
                 </div>
-                <div class="form-group input-district">
+                <div class="form-group">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini"
+                    <span class="input-wrapper__label"
                       >Quận / Huyện <em>(*)</em></span
                     >
                     <select
-                      class="custom-select label-mini select2-hidden-accessible"
+                      class="custom-select"
                       name="district_id"
                       id="district_id"
-                      data-id=""
                       required=""
-                      data-select2-id="district_id"
                       tabindex="-1"
                       aria-hidden="true"
                     >
-                      <option
-                        value=""
-                        disabled=""
-                        selected=""
-                        data-select2-id="5"
-                      >
+                      <option value="" disabled="" selected="">
                         Chọn Quận/Huyện
                       </option>
-                      <option
-                        value="001"
-                        data-main-id="181001"
-                        data-is-deliverable="true"
-                      >
-                        Quận 1
-                      </option>
-                      <option
-                        value="002"
-                        data-main-id="181002"
-                        data-is-deliverable="true"
-                      >
-                        Quận 2
-                      </option>
-                      <option
-                        value="003"
-                        data-main-id="181003"
-                        data-is-deliverable="true"
-                      >
-                        Quận 3
-                      </option>
-                      <option
-                        value="004"
-                        data-main-id="181004"
-                        data-is-deliverable="true"
-                      >
-                        Quận 4
-                      </option>
-                      <option
-                        value="005"
-                        data-main-id="181005"
-                        data-is-deliverable="true"
-                      >
-                        Quận 5
-                      </option>
-                      <option
-                        value="006"
-                        data-main-id="181006"
-                        data-is-deliverable="true"
-                      >
-                        Quận 6
-                      </option>
-                      <option
-                        value="007"
-                        data-main-id="181007"
-                        data-is-deliverable="true"
-                      >
-                        Quận 7
-                      </option>
-                      <option
-                        value="008"
-                        data-main-id="181008"
-                        data-is-deliverable="true"
-                      >
-                        Quận 8
-                      </option>
-                      <option
-                        value="009"
-                        data-main-id="181009"
-                        data-is-deliverable="true"
-                      >
-                        Quận 9
-                      </option>
-                      <option
-                        value="010"
-                        data-main-id="181010"
-                        data-is-deliverable="true"
-                      >
-                        Quận 10
-                      </option>
-                      <option
-                        value="011"
-                        data-main-id="181011"
-                        data-is-deliverable="true"
-                      >
-                        Quận 11
-                      </option>
-                      <option
-                        value="012"
-                        data-main-id="181012"
-                        data-is-deliverable="true"
-                      >
-                        Quận 12
-                      </option>
-                      <option
-                        value="013"
-                        data-main-id="181013"
-                        data-is-deliverable="true"
-                      >
-                        Phú Nhuận
-                      </option>
-                      <option
-                        value="014"
-                        data-main-id="181014"
-                        data-is-deliverable="true"
-                      >
-                        Tân Bình
-                      </option>
-                      <option
-                        value="015"
-                        data-main-id="181015"
-                        data-is-deliverable="true"
-                      >
-                        Tân Phú
-                      </option>
-                      <option
-                        value="016"
-                        data-main-id="181016"
-                        data-is-deliverable="true"
-                      >
-                        Bình Tân
-                      </option>
-                      <option
-                        value="017"
-                        data-main-id="181017"
-                        data-is-deliverable="true"
-                      >
-                        Bình Thạnh
-                      </option>
-                      <option
-                        value="018"
-                        data-main-id="181018"
-                        data-is-deliverable="true"
-                      >
-                        Gò Vấp
-                      </option>
-                      <option
-                        value="019"
-                        data-main-id="181019"
-                        data-is-deliverable="true"
-                      >
-                        Thủ Đức
-                      </option>
-                      <option
-                        value="020"
-                        data-main-id="181020"
-                        data-is-deliverable="true"
-                      >
-                        Bình Chánh
-                      </option>
-                      <option
-                        value="021"
-                        data-main-id="181021"
-                        data-is-deliverable="true"
-                      >
-                        Hóc Môn
-                      </option>
-                      <option
-                        value="022"
-                        data-main-id="181022"
-                        data-is-deliverable="true"
-                      >
-                        Củ Chi
-                      </option>
-                      <option
-                        value="023"
-                        data-main-id="181023"
-                        data-is-deliverable="true"
-                      >
-                        Cần Giờ
-                      </option>
-                      <option
-                        value="024"
-                        data-main-id="181024"
-                        data-is-deliverable="true"
-                      >
-                        Nhà Bè
-                      </option></select
-                    ><span
-                      class="select2 select2-container select2-container--default"
-                      dir="ltr"
-                      data-select2-id="4"
-                      style="width: 618.766px"
-                      ><span class="selection"
-                        ><span
-                          class="select2-selection select2-selection--single"
-                          role="combobox"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                          tabindex="0"
-                          aria-labelledby="select2-district_id-container"
-                          ><span
-                            class="select2-selection__rendered"
-                            id="select2-district_id-container"
-                            role="textbox"
-                            aria-readonly="true"
-                            title="Chọn Quận/Huyện"
-                            >Chọn Quận/Huyện</span
-                          ><span
-                            class="select2-selection__arrow"
-                            role="presentation"
-                            ><b role="presentation"></b></span></span></span
-                      ><span class="dropdown-wrapper" aria-hidden="true"></span
-                    ></span>
+                      <option value="001">Quận 1</option>
+                      <option value="002">Quận 2</option>
+                      <option value="003">Quận 3</option>
+                      <option value="004">Quận 4</option>
+                      <option value="005">Quận 5</option>
+                      <option value="006">Quận 6</option>
+                      <option value="007">Quận 7</option>
+                      <option value="008">Quận 8</option>
+                      <option value="009">Quận 9</option>
+                      <option value="010">Quận 10</option>
+                      <option value="011">Quận 11</option>
+                      <option value="012">Quận 12</option>
+                      <option value="013">Phú Nhuận</option>
+                      <option value="014">Tân Bình</option>
+                      <option value="015">Tân Phú</option>
+                      <option value="016">Bình Tân</option>
+                      <option value="017">Bình Thạnh</option>
+                      <option value="018">Gò Vấp</option>
+                      <option value="019">Thủ Đức</option>
+                      <option value="020">Bình Chánh</option>
+                      <option value="021">Hóc Môn</option>
+                      <option value="022">Củ Chi</option>
+                      <option value="023">Cần Giờ</option>
+                      <option value="024">Nhà Bè</option>
+                    </select>
                   </div>
                 </div>
-                <div class="form-group input-ward">
+                <div class="form-group">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini"
+                    <span class="input-wrapper__label"
                       >Phường / Xã <em>(*)</em></span
                     >
                     <select
-                      class="custom-select label-mini select2-hidden-accessible"
+                      class="custom-select"
                       name="ward_id"
                       id="ward_id"
-                      data-id=""
                       required=""
-                      data-select2-id="ward_id"
                       tabindex="-1"
                       aria-hidden="true"
                     >
-                      <option
-                        value=""
-                        disabled=""
-                        selected=""
-                        data-select2-id="7"
-                      >
+                      <option value="" disabled="" selected="">
                         Chọn Phường / Xã
-                      </option></select
-                    ><span
-                      class="select2 select2-container select2-container--default"
-                      dir="ltr"
-                      data-select2-id="6"
-                      style="width: 618.766px"
-                      ><span class="selection"
-                        ><span
-                          class="select2-selection select2-selection--single"
-                          role="combobox"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                          tabindex="0"
-                          aria-labelledby="select2-ward_id-container"
-                          ><span
-                            class="select2-selection__rendered"
-                            id="select2-ward_id-container"
-                            role="textbox"
-                            aria-readonly="true"
-                            title="Chọn Phường / Xã"
-                            >Chọn Phường / Xã</span
-                          ><span
-                            class="select2-selection__arrow"
-                            role="presentation"
-                            ><b role="presentation"></b></span></span></span
-                      ><span class="dropdown-wrapper" aria-hidden="true"></span
-                    ></span>
+                      </option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group street">
                   <div class="input-wrapper">
-                    <span class="input-wrapper__label mini"
+                    <span class="input-wrapper__label"
                       >Số nhà / Tên đường <em>(*)</em></span
                     >
                     <input
                       type="text"
-                      class="form-control label-mini"
+                      class="form-control"
                       id="street"
                       name="street"
                       value=""
@@ -987,7 +287,7 @@
               </div>
               <label
                 for="register_account"
-                class="label-block Register_account"
+                class="label-block"
                 style="margin: 5px 0 0"
               >
                 <input
@@ -999,7 +299,7 @@
                   checked="checked"
                 />
                 <div
-                  class="export-billing-box confirm-installation-box"
+                  class="export-billing-box"
                   style="border: 0; padding: 0; font-size: 15px"
                 >
                   <div class="custom-checkbox-wrapper">
@@ -1010,7 +310,7 @@
                   </div>
                 </div>
               </label>
-              <div class="delivery-date-time-section" id="note_order">
+              <div class="delivery-date-time-section">
                 <div class="input-wrapper">
                   <span class="input-wrapper__label"
                     >Để lại lời nhắn cho Nguyễn Kim</span
@@ -1026,13 +326,13 @@
             </div>
           </div>
           <h3>Chọn hình thức thanh toán</h3>
-          <div class="checkout-step step-2 collapse-component">
+          <div class="step-2">
             <div class="payment-method-wrapper">
-              <label for="paymentCOD" class="label-block flex-1-4">
+              <label for="paymentCOD" class="label-block flex-1-3">
                 <input
                   type="radio"
                   name="payment_type"
-                  class="custom-radio collapse-radio"
+                  class="custom-radio"
                   id="paymentCOD"
                   value="cod"
                   checked=""
@@ -1040,13 +340,10 @@
                 <div class="payment-method-box">
                   <div class="payment-method-icon">
                     <img
-                      class="lazyloaded"
-                      loading="lazy"
-                      data-src="./images/new_checkout/icon-payment-cod.svg"
                       width="27"
                       height="27"
                       alt="payment-method-COD"
-                      src="./images/new_checkout/icon-payment-cod.svg"
+                      src="./img/icon-payment-cod.svg"
                     />
                   </div>
                   <div class="payment-method-description">
@@ -1057,108 +354,67 @@
                   </div>
                 </div>
               </label>
-              <div class="collapse-wrapper flex-1-3">
-                <label
-                  for="paymentInternetBanking"
-                  class="label-block payment-block"
-                >
-                  <input
-                    type="radio"
-                    name="payment_type"
-                    class="custom-radio collapse-cta collapse-radio"
-                    value="internetBanking"
-                    data-collapse-wrapper="payment-internet-banking"
-                    id="paymentInternetBanking"
-                  />
-                  <div class="payment-method-box">
-                    <div class="payment-method-icon">
-                      <img
-                        class="lazyloaded"
-                        loading="lazy"
-                        data-src="./images/new_checkout/icon-payment-atm.svg"
-                        width="27"
-                        height="23"
-                        alt="payment-method-atm"
-                        src="./images/new_checkout/icon-payment-atm.svg"
-                      />
-                    </div>
-                    <div class="payment-method-description">
-                      <p class="main-content">Thẻ ATM/Internet banking</p>
-                    </div>
-                    <div class="custom-radio-2-box">
-                      <div class="custom-radio-2"></div>
-                    </div>
+              <label
+                for="paymentInternetBanking"
+                class="label-block payment-block flex-1-3"
+              >
+                <input
+                  type="radio"
+                  name="payment_type"
+                  class="custom-radio"
+                  value="internetBanking"
+                  id="paymentInternetBanking"
+                />
+                <div class="payment-method-box">
+                  <div class="payment-method-icon">
+                    <img
+                      width="27"
+                      height="23"
+                      alt="payment-method-atm"
+                      src="./img/icon-payment-atm.svg"
+                    />
                   </div>
-                </label>
-              </div>
-              <div class="collapse-wrapper flex-1-3">
-                <label for="paymentCredit" class="label-block payment-block">
-                  <input
-                    type="radio"
-                    name="payment_type"
-                    class="custom-radio collapse-radio"
-                    data-collapse-wrapper="payment-credit"
-                    value="creditCard"
-                    id="paymentCredit"
-                  />
-                  <div class="payment-method-box">
-                    <div class="payment-method-icon">
-                      <img
-                        class="lazyloaded"
-                        loading="lazy"
-                        data-src="./images/new_checkout/icon-payment-credit.svg"
-                        width="27"
-                        height="20"
-                        alt="payment-method-credit"
-                        src="./images/new_checkout/icon-payment-credit.svg"
-                      />
-                    </div>
-                    <div class="payment-method-description">
-                      <p class="main-content">Thẻ tín dụng</p>
-                    </div>
-                    <div class="custom-radio-2-box">
-                      <div class="custom-radio-2"></div>
-                    </div>
+                  <div class="payment-method-description">
+                    <p class="main-content">Thẻ ATM/Internet banking</p>
                   </div>
-                </label>
-              </div>
+                  <div class="custom-radio-2-box">
+                    <div class="custom-radio-2"></div>
+                  </div>
+                </div>
+              </label>
 
-              <!-- <div class="collapse-wrapper flex-1-3 onepay-qr-display">
-                <label class="label-block payment-block">
-                  <input
-                    type="radio"
-                    name="payment_type"
-                    class="custom-radio collapse-radio"
-                    data-collapse-wrapper="qr"
-                    value="onepay_qr"
-                  />
-                  <div class="payment-method-box">
-                    <div class="payment-method-icon">
-                      <img
-                        class="lazyloaded"
-                        loading="lazy"
-                        data-src="https://www.nguyenkim.com/images/companies/_1/layout/qrcode.png"
-                        width="27"
-                        height="20"
-                        alt="payment-method-credit"
-                        src="https://www.nguyenkim.com/images/companies/_1/layout/qrcode.png"
-                      />
-                    </div>
-                    <div class="payment-method-description">
-                      <p class="main-content">QR Code</p>
-                    </div>
-                    <div class="custom-radio-2-box">
-                      <div class="custom-radio-2"></div>
-                    </div>
+              <label
+                for="paymentCredit"
+                class="label-block payment-block flex-1-3"
+              >
+                <input
+                  type="radio"
+                  name="payment_type"
+                  class="custom-radio"
+                  value="creditCard"
+                  id="paymentCredit"
+                />
+                <div class="payment-method-box">
+                  <div class="payment-method-icon">
+                    <img
+                      width="27"
+                      height="20"
+                      alt="payment-method-credit"
+                      src="./img/icon-payment-credit.svg"
+                    />
                   </div>
-                </label>
-              </div> -->
+                  <div class="payment-method-description">
+                    <p class="main-content">Thẻ tín dụng</p>
+                  </div>
+                  <div class="custom-radio-2-box">
+                    <div class="custom-radio-2"></div>
+                  </div>
+                </div>
+              </label>
             </div>
           </div>
-          <div
-            class="checkout-step step-3 collapse-component collapse-component"
-          >
-            <label for="installService" class="label-block">
+          <div class="step-3">
+            <label for="installService" class="label-block mb-3">
               <input
                 type="checkbox"
                 class="custom-checkbox"
@@ -1172,7 +428,7 @@
                 <div>Bạn muốn sử dụng dịch vụ lắp đặt</div>
               </div>
             </label>
-            <label for="confirmPolicy" class="label-block">
+            <label for="confirmPolicy" class="label-block mb-3">
               <input
                 type="checkbox"
                 class="custom-checkbox"
@@ -1211,19 +467,13 @@
             </label>
           </div>
           <div class="checkout-box">
-            <button
-              type="submit"
-              class="checkout_buy button checkout-cta buy_now"
-            >
+            <button type="submit" class="checkout-cta">
               Thanh toán
               <img
-                loading="lazy"
-                class="ls-is-cached lazyloaded"
-                data-src="./images/new_checkout/arrow-right.svg"
                 alt="arrow-right"
                 width="17"
                 height="22"
-                src="./images/new_checkout/arrow-right.svg"
+                src="./img/arrow-right.svg"
               />
             </button>
           </div>
