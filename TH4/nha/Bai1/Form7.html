@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 7</title>
+    <style>
+      .container {
+        margin: auto;
+        border: 1px solid gray;
+        width: fit-content;
+      }
+      .title {
+        background-color: #00ccff;
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+        padding: 1em;
+      }
+      input {
+        box-sizing: border-box;
+        width: 33em;
+        height: 3em;
+      }
+      form {
+        padding: 1.5em;
+      }
+      table {
+        width: 100%;
+      }
+
+      td {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1em;
+      }
+      .btn-submit {
+        text-align: center;
+      }
+      .btn-submit > button {
+        background-color: #00ccff;
+        padding: 7px;
+        border: 1px solid lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">ĐĂNG KÝ TÀI KHOẢN</div>
+      <div class="form">
+        <form action="" onsubmit="return verifyForm();" method="get">
+          <table>
+            <tr>
+              <td>
+                <label for="name">Tên</label>
+                <input type="text" id="name" name="name" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="password">Mật Khẩu</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  aria-hidden="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="confirm_password">Xác nhận Mật Khẩu</label>
+                <input
+                  type="password"
+                  name="confirm_password"
+                  id="confirm_password"
+                  aria-hidden="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" name="phone" id="phone" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="address">Nhập địa chỉ</label>
+                <input type="text" name="address" id="address" />
+              </td>
+            </tr>
+          </table>
+          <div class="btn-submit">
+            <button id="submit">TẠO TÀI KHOẢN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function verifyForm() {
+        // Get form inputs
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirm_password =
+          document.getElementById("confirm_password").value;
+        var phone = document.getElementById("phone").value;
+        var address = document.getElementById("address").value;
+
+        // Perform form validation
+        if (name === "") {
+          alert("Please enter your name.");
+          return false;
+        }
+
+        if (email === "") {
+          alert("Please enter your email.");
+          return false;
+        }
+
+        if (password === "") {
+          alert("Please enter your password.");
+          return false;
+        }
+
+        if (confirm_password === "") {
+          alert("Please confirm your password.");
+          return false;
+        }
+
+        if (password !== confirm_password) {
+          alert("Passwords do not match.");
+          return false;
+        }
+
+        if (phone === "") {
+          alert("Please enter your phone number.");
+          return false;
+        }
+
+        if (address === "") {
+          alert("Please enter your address.");
+          return false;
+        }
+
+        // Form is valid, submit the form
+        alert("Form submitted successfully!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
