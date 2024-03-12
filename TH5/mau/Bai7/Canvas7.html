@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Canvas 7</title>
   </head>
 
   <body>
-    <div style="border: 1px solid red; width: 20em; text-align: center">
-      <canvas id="myCanvas" width="200em" height="100px"></canvas><br />
-      <canvas id="myCanvas2" width="200em" height="100px"></canvas>
-    </div>
+      <canvas id="myCanvas" width="200px" height="100px" style="border: 1px solid red;"></canvas>
     <script>
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
@@ -21,18 +18,15 @@
       grd.addColorStop(1, "yellow");
       // Fill with gradient
       ctx.fillStyle = grd;
-      ctx.fillRect(10, 10, 250, 50);
-
-      var a = document.getElementById("myCanvas2");
-      var ctx = a.getContext("2d");
+      ctx.fillRect(10, 10, 180, 30);
 
       // Create gradient
-      var grd = ctx.createLinearGradient(0, 0, 200, 0);
+      grd = ctx.createLinearGradient(0, 0, 200, 0);
       grd.addColorStop(0, "red");
       grd.addColorStop(1, "yellow");
       // Fill with gradient
       ctx.fillStyle = grd;
-      ctx.fillRect(10, 10, 250, 50);
+      ctx.fillRect(10, 60, 180, 30);
     </script>
   </body>
 </html>

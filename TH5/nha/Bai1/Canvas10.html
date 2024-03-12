@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas 10</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="220"
+      style="border: 2px solid blue; border-radius: 10px"
+    >
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.fillStyle = "#ccffff";
+      ctx.fillRect(0, 0, 400, 220);
+
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(200, 100, 70, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(200, 100, 90, Math.PI, 1.33 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(200, 100, 110, Math.PI, 1.33 * Math.PI);
+      ctx.stroke();
+
+      ctx.strokeStyle = "gray";
+      ctx.beginPath();
+      ctx.arc(200, 100, 90, 1.67 * Math.PI, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(200, 100, 110, 1.67 * Math.PI, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(200, 100, 130, 1.67 * Math.PI, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(200, 100, 150, 1.67 * Math.PI, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(200, 100, 170, 1.67 * Math.PI, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.strokeStyle = "blue";
+      ctx.beginPath();
+      ctx.moveTo(200, 30);
+      ctx.lineTo(200, 170);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(130, 90);
+      ctx.lineTo(270, 90);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(130, 110);
+      ctx.lineTo(270, 110);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(140, 70);
+      ctx.lineTo(260, 70);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(140, 130);
+      ctx.lineTo(260, 130);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(150, 50);
+      ctx.lineTo(250, 50);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(150, 150);
+      ctx.lineTo(250, 150);
+      ctx.stroke();
+
+      ctx.fillStyle = "black";
+      ctx.font = "25px Arial";
+      ctx.fillText("GLOBAL 2021", 125, 205);
+    </script>
+  </body>
+</html>

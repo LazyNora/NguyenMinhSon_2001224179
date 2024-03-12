@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas 11</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="220"
+      style="border: 2px solid blue; border-radius: 10px"
+    >
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.fillStyle = "#ccffff";
+      ctx.fillRect(0, 0, 400, 220);
+
+      ctx.fillStyle = "black";
+      ctx.font = "30px Arial";
+      ctx.fillText("HUFI 2021", 130, 60);
+
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "green";
+      ctx.beginPath();
+      ctx.arc(200, 0, 110, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.strokeStyle = "red";
+      ctx.beginPath();
+      ctx.arc(200, 0, 130, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.strokeStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(200, 0, 150, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "black";
+      ctx.beginPath();
+      ctx.moveTo(20, 160);
+      ctx.lineTo(280, 160);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(20, 180);
+      ctx.lineTo(330, 180);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(20, 200);
+      ctx.lineTo(380, 200);
+      ctx.stroke();
+    </script>
+  </body>
+</html>

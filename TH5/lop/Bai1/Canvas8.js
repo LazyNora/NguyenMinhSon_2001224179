@@ -9,22 +9,18 @@
 // ctx.fillStyle = grd;
 // ctx.fill;
 
-
-
-var canvas = document.getElementById('myCanvas');
-var ctx = canvas.getContext('2d');
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
 
 var x = 100,
-    y = 75,
-    // Radii of the white glow.
-    innerRadius = 5,
-    outerRadius = 70,
-    // Radius of the entire circle.
-    radius = 60;
+  y = 100,
+  innerRadius = 10,
+  outerRadius = 100,
+  radius = 180;
 
 var gradient = ctx.createRadialGradient(x, y, innerRadius, x, y, outerRadius);
-gradient.addColorStop(0, 'red');
-gradient.addColorStop(1, 'green');
+gradient.addColorStop(0, "red");
+gradient.addColorStop(1, "white");
 
 ctx.arc(x, y, radius, 0, 2 * Math.PI);
 

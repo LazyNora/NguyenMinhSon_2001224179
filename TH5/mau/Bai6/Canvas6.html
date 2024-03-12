@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Canvas 6</title>
   </head>
 
   <body>
-    <canvas id="myCanvas" width="200em" height="100px"></canvas>
+    <canvas id="myCanvas" width="200px" height="100px" style="border: 1px solid red;"></canvas>
   </body>
   <script>
     var c = document.getElementById("myCanvas");
@@ -19,6 +19,6 @@
     grd.addColorStop(1, "white");
     // Fill with gradient
     ctx.fillStyle = grd;
-    ctx.fillRect(10, 10, 150, 80);
+    ctx.fillRect(10, 10, 180, 80);
   </script>
 </html>
