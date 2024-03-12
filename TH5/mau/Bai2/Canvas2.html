@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <canvas
+      id="myCanvas"
+      width="200"
+      height="200"
+      style="border: 2px solid red"
+    >
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+    <script>
+      var a = document.getElementById("myCanvas");
+      var ctx = a.getContext("2d");
+      // đường ngang
+      ctx.moveTo(0, 100);
+      ctx.lineTo(200, 100);
+
+      // đường dọc
+      ctx.moveTo(100, 50);
+      ctx.lineTo(100, 150);
+
+      // đường chéo trái
+      ctx.moveTo(55, 55);
+      ctx.lineTo(145, 145);
+      //đường chéo pải
+      ctx.moveTo(145, 55);
+      ctx.lineTo(55, 145);
+      ctx.stroke();
+    </script>
+  </body>
+</html>

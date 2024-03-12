@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="250em"
+      height="100"
+      style="border: 1px solid grey"
+    >
+    </canvas>
+    <br />
+    <canvas
+      id="something"
+      width="250em"
+      height="100"
+      style="border: 1px solid grey"
+    >
+    </canvas>
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+      ctx.font = "40px Arial";
+      ctx.fillText("Hello World", 10, 50);
+      ctx.stroke();
+
+      var c = document.getElementById("something");
+      var cty = c.getContext("2d");
+      cty.font = "40px Arial";
+      cty.strokeText("Hello World", 20, 50);
+      cty.stroke();
+    </script>
+  </body>
+</html>
