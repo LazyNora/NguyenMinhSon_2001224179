@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #panel,.flip{
+        font-style: 16px;
+        padding: 10px;
+        text-align: center;
+        background-color: #4caf50;
+        color: white;
+        border: 1px solid #a6d8a8;
+        margin: auto;
+      }
+
+      #panel{
+        display: none;
+      }
+
+    </style>
+		<title>Display 1</title>
+	</head>
+	<body>
+		<p class="flip" onclick="myFunction()">Click to show Detail</p>
+		<div id="panel">
+			<p>
+				Thành phố Hồ Chí Minh (còn gọi là sài Gòn) là thành phố lớn nhất
+				tại Việt Nam về dân số và quy mô đô thị hóa. Đây còn là trung
+				tâm kinh tế, chính trị, văn hóa và giáo dục tại Việt Nam. Thành
+				phố Hồ Chí Mình là thành phố trực thuộc trung ương thuộc loại đô
+				thị đặc biệt của Việt Nam cùng với thủ đô Hà Nội. [5]<br />
+				Nằm trong vùng chuyển tiếp giữa Đông Nam Bộ và Tây Nam Bộ, thành
+				phố này hiện có 16 quận, 1 thành phố và 5 huyện, tổng diện tích
+				2.061 km². [6] Theo kết quả điều tra dân số chính thức vào thời
+				điểm ngày một tháng 4 năm 2009 thì dân số thành phố là 7.162.864
+				người (chiếm 8,34% dân số Việt Nam), mật độ dân số trung bình
+				3.419 người/km². Đến năm 2019, dân số thành phố tăng lên
+				8.993.082 người và cũng là nơi có mặt độ dân số cao nhất Việt
+				Nam. [7] Tuy nhiên, nếu tính những người cư trú không đăng ký hộ
+				khẩu thì dân số thực tế của thành phố này năm 2018 là gần 14
+				triệu người. [8] Thành phố Hồ Chí Minh năm 2011 chiếm 21,3% tổng
+				sản phẩm (GDP) và 29,38% tổng thu ngân sách của cả Việt Nam.
+			</p>
+		</div>
+    <script>
+      function myFunction(){
+        document.getElementById("panel").style.display = "block";
+      }
+    </script>
+	</body>
+</html>
