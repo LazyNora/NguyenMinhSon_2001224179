@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 1000px;
+    margin: auto;
+}
+
+
+.header{
+    clear: both;
+    text-align: center;
+    background: gray;
+    font-size: xx-large;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    display: flex;
+}
+
+.banner{
+    background: lightblue;
+    clear: both;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.navigation{
+    background: lightgray;
+    clear: both;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.menusidebar{
+    float: left;
+    width: 25%;
+    height: 400px;
+    padding: 10px;
+    background: lavenderblush;
+}
+.content{
+    float: left;
+    width: 50%;
+    height: 400px;
+    padding: 10px;
+    background: lemonchiffon;
+}
+.sidebarqc{
+    float: right;
+    width: 25%;
+    height: 400px;
+    padding: 10px;
+    background: coral;
+}
+
+.footer{
+    clear: both;
+    background:greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}

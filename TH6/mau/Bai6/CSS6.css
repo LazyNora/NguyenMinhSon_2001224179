@@ -1,0 +1,11 @@
+img{
+    float: left;
+    margin-right: 10px;
+}
+.container{
+    width: 600px;
+    margin: auto;
+}
+h1{
+    text-align: center;
+}

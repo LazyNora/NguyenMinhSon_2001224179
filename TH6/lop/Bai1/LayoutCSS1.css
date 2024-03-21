@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+}
+
+.header {
+    background-color: #31363F;
+    text-align: center;
+    height: 14vh;
+    line-height: 3.6;
+    color: white;
+    width: 100%;
+    clear: both;
+}
+
+.Navigation{
+    width: 30%;
+    height: 400px;
+    background-color: gray;
+    line-height: 1.6;
+    padding: 20px;
+    float: left;
+}
+
+.Article{
+    width: 70%;
+    height: 400px;
+    float: right;
+    padding: 20px;
+    line-height: 2rem;
+}
+
+.footer {
+    background-color: #31363F;
+    text-align: center;
+    height: 3em;
+    color: white;
+    clear: both;
+}
+
+h3{
+    padding-top: 10px;
+}
