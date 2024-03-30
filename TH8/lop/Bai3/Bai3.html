@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bai 3</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			#menu {
+				width: 90%;
+				margin: 20px auto;
+			}
+			#menu ul {
+				list-style-type: none;
+				padding: 0px;
+			}
+			#menu > ul > li {
+				background: #00f;
+				text-align: center;
+			}
+			#menu li {
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				position: relative;
+			}
+			#menu li a {
+				color: #fff;
+				text-decoration: none;
+				padding: 0 15px;
+			}
+			#menu ul li > .submenu {
+				display: none;
+				position: absolute;
+			}
+			.submenu {
+				background: #90f !important;
+				width: 200px;
+			}
+			.submenu ul {
+				width: 200px;
+				list-style: none;
+				padding: 0;
+				text-align: left;
+			}
+			.submenu li {
+				width: 200px;
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 3px solid #fff;
+				text-align: left !important;
+			}
+			.submenu li a {
+				text-decoration: none;
+				color: #fff;
+				display: block;
+			}
+			#menu li:hover {
+				background: #0cf;
+			}
+			.submenu ul li {
+				position: relative;
+			}
+			.submenu .submenu {
+				position: absolute;
+				left: 200px;
+				top: 0;
+				display: none;
+			}
+			#menu li:hover > .submenu {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<ul>
+				<li>
+					<a href="#">GIỚI THIỆU ></a>
+					<ul class="submenu">
+						<li><a href="#">Lịch Sử Phát Triển</a></li>
+						<li><a href="#">Tầm Nhìn - Sứ Mạng</a></li>
+						<li><a href="#">Bộ Máy Tổ Chức</a></li>
+						<li><a href="#">Ba Công Khai</a></li>
+					</ul>
+				</li>
+				<li><a href="#">HUFI 35 NĂM</a></li>
+				<li>
+					<a href="#">ĐÀO TẠO ></a>
+					<ul class="submenu">
+						<li><a href="#">Các Trình Độ Đào Tạo</a></li>
+						<li>
+							<a href="#">Chương Trình Đào Tạo ></a>
+							<ul class="submenu">
+								<li><a href="#">Sau Đại Học</a></li>
+								<li><a href="#">Đại Học</a></li>
+								<li><a href="#">Đại Học LT Từ CĐ</a></li>
+								<li><a href="#">Cao Đẳng</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Đào Tạo Quốc Tế ></a>
+							<ul class="submenu">
+								<li><a href="#">Chương Trình 2 + 2</a></li>
+								<li><a href="#">Chương Trình 4 + 0</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Đề Án Mở Ngành Mới</a></li>
+					</ul>
+				</li>
+				<li><a href="#">TUYỂN SINH</a></li>
+				<li><a href="#">GIẢNG VIÊN</a></li>
+				<li><a href="#">SINH VIÊN</a></li>
+				<li><a href="#">NGUYÊN CỨU KHOA HỌC</a></li>
+				<li><a href="#">TẠP CHÍ KHOA HỌC</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				height: 100%;
+				min-height: 100%;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 14px;
+				color: #555;
+			}
+			h1 {
+				font-size: 24px;
+				margin-bottom: 10px;
+			}
+			.container {
+				margin: 0 auto;
+				width: 1200px;
+			}
+			.container .product {
+				border-collapse: collapse;
+				width: 100%;
+			}
+
+			.product td {
+				width: 25%;
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 10px;
+				vertical-align: baseline;
+			}
+			.item {
+				display: flex;
+				flex-direction: column;
+			}
+			.item-img {
+				position: relative;
+				width: 100%;
+				padding-top: 100%;
+			}
+			.item-img img {
+				position: absolute;
+				object-fit: contain;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				max-width: 100%;
+			}
+			.item-img .tag-flash {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: orange;
+				font-size: 12px;
+				font-weight: bold;
+				color: white;
+				display: flex;
+				align-items: center;
+				padding: 0 12px 0 30px;
+				background-image: linear-gradient(to right, orange, red);
+				font-size: 12px;
+				border-radius: 100px;
+				height: 24px;
+				justify-content: space-between;
+				width: fit-content;
+			}
+			.item-img .tag-installment {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: orange;
+				font-size: 12px;
+				font-weight: bold;
+				color: white;
+				display: flex;
+				align-items: center;
+				padding: 0 5px;
+				border-radius: 5px;
+				height: 22px;
+			}
+			.tag-flash .icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 24px;
+				height: 24px;
+				border-radius: 24px;
+				color: red;
+				background-color: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.tag-flash img {
+				width: 10px;
+			}
+			.item .item-name {
+				margin-top: 12px;
+				font-size: 16px;
+				margin-bottom: 0;
+			}
+			.item .item-price {
+				margin-top: 10px;
+				font-size: 16px;
+				font-weight: bold;
+				color: red;
+				margin-bottom: 0;
+			}
+			.item .item-rating {
+				display: flex;
+				margin-top: 10px;
+				align-items: center;
+			}
+			.item .item-rating div {
+				display: flex;
+			}
+			.item .item-rating img {
+				width: 17px;
+				height: 17px;
+				margin-left: 4px;
+			}
+			.item .item-rating span {
+				color: #888;
+				font-size: 12px;
+				margin-left: 20px;
+			}
+			.item .item-discount {
+				margin-top: 10px;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>MÁY TÍNH BẢNG NỔI BẬT</h1>
+			<table class="product">
+				<!-- Row 1 -->
+				<tr>
+					<!-- Item 1 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img src="img/ipad-pro-10-5-inch_96vg-wv.png" />
+								<div class="tag-flash">
+									<div class="icon">
+										<img src="img/flash.png" />
+									</div>
+									GIẢM 1.000.000đ
+								</div>
+							</div>
+							<p class="item-name">
+								iPad Wifi Cellular 128GB (2018)
+							</p>
+							<p class="item-price">14.490.000đ</p>
+							<div class="item-rating">
+								<div>
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_not_active.svg" />
+								</div>
+								<span>7 đánh giá</span>
+							</div>
+							<p class="item-discount">
+								Mua kèm Apple Pencil giám 500.000đ và 1 K.mãi
+								khác
+							</p>
+						</div>
+					</td>
+					<!-- Item 2 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img
+									src="img/apple-ipad-air-4-2020-64-256gb_95ap-jp_vqom-en.jpg" />
+							</div>
+							<p class="item-name">
+								Samsung Galaxy Tab A 10.5 inch
+							</p>
+							<p class="item-price">9.490.000đ</p>
+							<div class="item-rating">
+								<div>
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_not_active.svg" />
+								</div>
+								<span>47 đánh giá</span>
+							</div>
+							<p class="item-discount">
+								Cơ hội trúng 61 xe Wave Alpha khi trả góp Home
+								Credit
+							</p>
+						</div>
+					</td>
+					<!-- Item 3 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img src="img/ipad_wifi_128gb.jpeg" />
+								<div class="tag-installment">Trả góp 0%</div>
+							</div>
+							<p class="item-name">iPad Wifi 128 GB (2018)</p>
+							<p class="item-price">11.490.000đ</p>
+							<div class="item-rating">
+								<div>
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+								</div>
+								<span>9 đánh giá</span>
+							</div>
+							<p class="item-discount">
+								Mua kèm Apple Pencil giám 500.000đ và 1 K.mãi
+								khác
+							</p>
+						</div>
+					</td>
+					<!-- Item 4 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img src="img/ipad-pro-12-9-xam-1_2_.png" />
+								<div class="tag-installment">Trả góp 0%</div>
+							</div>
+							<p class="item-name">
+								iPad Pro 11 inch Wifi Cellular 64GB (2018)
+							</p>
+							<p class="item-price">25.990.000đ</p>
+							<p class="item-discount">
+								Cơ hội trúng 61 xe Wave Alpha khi trả góp Home
+								Credit
+							</p>
+						</div>
+					</td>
+				</tr>
+				<!-- Row 2 -->
+				<tr>
+					<!-- Item 5 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img src="img/ipad-pro-12-9-xam-1_2_.png" />
+								<div class="tag-installment">Trả góp 0%</div>
+							</div>
+							<p class="item-name">
+								iPad Pro 11 inch Wifi 256GB (2018)
+							</p>
+							<p class="item-price">25.990.000đ</p>
+							<p class="item-discount">
+								Cơ hội trúng 61 xe Wave Alpha khi trả góp Home
+								Credit
+							</p>
+						</div>
+					</td>
+					<!-- Item 6 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img src="img/ipad-pro-12-9-xam-1_2_.png" />
+								<div class="tag-installment">Trả góp 0%</div>
+							</div>
+							<p class="item-name">
+								iPad Pro 11 inch Wifi 64GB (2018)
+							</p>
+							<p class="item-price">21.990.000đ</p>
+							<p class="item-discount">
+								Cơ hội trúng 61 xe Wave Alpha khi trả góp Home
+								Credit
+							</p>
+						</div>
+					</td>
+					<!-- Item 7 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img src="img/ipad-pro-10_5_inch.jpeg" />
+								<div class="tag-installment">Trả góp 0%</div>
+							</div>
+							<p class="item-name">
+								iPad Pro 10.5 inch Wifi Cellular 64GB (2017)
+							</p>
+							<p class="item-price">19.990.000đ</p>
+							<div class="item-rating">
+								<div>
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+								</div>
+								<span>5 đánh giá</span>
+							</div>
+							<p class="item-discount">
+								Mua kèm Apple Pencil giám 500.000đ và 1 K.mãi
+								khác
+							</p>
+						</div>
+					</td>
+					<!-- Item 8 -->
+					<td>
+						<div class="item">
+							<div class="item-img">
+								<img
+									src="img/636733811405304690_uk-galaxy-tabs4-t830-sm-t830nzaabtu-gray-Grey-1107.jpg" />
+							</div>
+							<p class="item-name">
+								Samsung Galaxy Tab S4 10.5 inch S-Pen
+							</p>
+							<p class="item-price">17.990.000đ</p>
+							<div class="item-rating">
+								<div>
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+									<img src="img/star_active.svg" />
+								</div>
+								<span>6 đánh giá</span>
+							</div>
+							<p class="item-discount">
+								Cơ hội trúng 61 xe Wave Alpha khi trả góp Home
+								Credit
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
