@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./signIn.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="left">
+          <a href="./index.html"><img src="./assets/logo.svg" alt="" /></a>
+          <a href="#">Course</a>
+          <a href="#">The Report</a>
+        </div>
+        <div class="right">
+          <div class="search_bar">
+            <button>
+              <img
+                src="./assets/ic_search.svg"
+                alt=""
+                width="16px"
+                height="16px"
+              />
+            </button>
+            <input
+              type="text"
+              id="search"
+              placeholder="Search courses and more..."
+            />
+          </div>
+          <button class="nav_btn">
+            <img src="./assets/ic_add_document.svg" alt="" />
+          </button>
+          <a href="./signUp.html">Sign In</a>
+        </div>
+      </div>
+      <div class="main">
+        <button class="secondary_btn google">
+          <img src="./assets/ic_google.svg" class="btn_icon" />Sign In with
+          Google
+        </button>
+        <div class="hline">
+          <hr />
+          <div class="or">
+            <p>Or</p>
+          </div>
+        </div>
+        <div>
+          <form action="" class="signin-form">
+            <p>Your email</p>
+            <input type="email" name="email" id="email" class="form-input" />
+            <div class="pass_input">
+                <p>Your password</p>
+                <a>Forgot password?</a>
+            </div>
+            <input type="password" name="password" id="password" class="form-input" />
+            <button type="submit" class="primary_btn">Login</button>
+          </form>
+        </div>
+      </div>
+      <div class="subtext">
+        <p>New to Class Central? <a href="./signUp.html">Create a free account</a></p>
+      </div>
+    </div>
+  </body>
+</html>
