@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hoa</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				font-size: 16px;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 50px;
+			}
+			.item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+			}
+			.item_image {
+				width: 300px;
+				height: 300px;
+				object-fit: cover;
+			}
+			.item_info {
+				text-align: center;
+			}
+			.item_info .price {
+				color: orange;
+				font-weight: bold;
+				font-size: 20px;
+        line-height: 1.5;
+			}
+
+			.cart {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				padding: 10px 20px;
+				border: 0.25px solid gray;
+				border-radius: 5px;
+				cursor: pointer;
+				background-color: #fff;
+			}
+			.cart_icon {
+				width: 16px;
+				height: 16px;
+			}
+      .cart_text {
+        font-weight: bold;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="grid">
+				<div class="item">
+					<img src="./img/item1.jpg" alt="" class="item_image" />
+					<div class="item_info">
+						<p class="title">It's yours - HB1004</p>
+						<p class="price">320.000đ</p>
+					</div>
+					<button class="cart">
+						<span class="cart_icon">
+							<img src="./img/icon_cart.svg" aria-hidden="true" />
+						</span>
+						<span class="cart_text">CHO VÀO GIỎ</span>
+					</button>
+				</div>
+				<div class="item">
+					<img src="./img/item2.jpg" alt="" class="item_image" />
+					<div class="item_info">
+						<p class="title">Dành cho em - HHG1002</p>
+						<p class="price">380.000đ</p>
+					</div>
+					<button class="cart">
+						<span class="cart_icon">
+							<img src="./img/icon_cart.svg" aria-hidden="true" />
+						</span>
+						<span class="cart_text">CHO VÀO GIỎ</span>
+					</button>
+				</div>
+				<div class="item">
+					<img src="./img/item3.jpg" alt="" class="item_image" />
+					<div class="item_info">
+						<p class="title">Ngày em đến - HHG1030</p>
+						<p class="price">380.000đ</p>
+					</div>
+					<button class="cart">
+						<span class="cart_icon">
+							<img src="./img/icon_cart.svg" aria-hidden="true" />
+						</span>
+						<span class="cart_text">CHO VÀO GIỎ</span>
+					</button>
+				</div>
+				<div class="item">
+					<img src="./img/item4.jpg" alt="" class="item_image" />
+					<div class="item_info">
+						<p class="title">Mộng mơ - HHG1003</p>
+						<p class="price">380.000đ</p>
+					</div>
+					<button class="cart">
+						<span class="cart_icon">
+							<img src="./img/icon_cart.svg" aria-hidden="true" />
+						</span>
+						<span class="cart_text">CHO VÀO GIỎ</span>
+					</button>
+				</div>
+				<div class="item">
+					<img src="./img/item5.jpg" alt="" class="item_image" />
+					<div class="item_info">
+						<p class="title">Vì em - HB1041</p>
+						<p class="price">450.000đ</p>
+					</div>
+					<button class="cart">
+						<span class="cart_icon">
+							<img src="./img/icon_cart.svg" aria-hidden="true" />
+						</span>
+						<span class="cart_text">CHO VÀO GIỎ</span>
+					</button>
+				</div>
+				<div class="item">
+					<img src="./img/item6.jpg" alt="" class="item_image" />
+					<div class="item_info">
+						<p class="title">Đến bên em - HB1040</p>
+						<p class="price">450.000đ</p>
+					</div>
+					<button class="cart">
+						<span class="cart_icon">
+							<img src="./img/icon_cart.svg" aria-hidden="true" />
+						</span>
+						<span class="cart_text">CHO VÀO GIỎ</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
