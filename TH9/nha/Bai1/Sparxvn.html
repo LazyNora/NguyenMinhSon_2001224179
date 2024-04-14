@@ -1,23 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h2>Welcome to My Homepage</h2>
-      <p>Use the menu to select difference style sheets</p>
-    </div>
-    <div class="left"></div>
-    <div class="content"></div>
-    <div class="right"></div>
-    <div class="footer"></div>
-  </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.header {
+				clear: both;
+				background-color: greenyellow;
+				padding: 20px;
+				margin-bottom: 20px;
+			}
+			.left {
+				float: left;
+				width: 20%;
+				background-color: gray;
+				height: 440px;
+				margin-right: 20px;
+				margin-bottom: 20px;
+			}
+			.left ul {
+				list-style-type: none;
+				padding: 0;
+			}
+			.left ul li {
+				padding: 10px;
+				height: 50px;
+				border-bottom: 1px solid white;
+			}
+			.left ul li a {
+				text-decoration: none;
+				color: white;
+				font-size: 16px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			.left ul li a:hover {
+				background-color: green;
+			}
+			.content {
+				float: left;
+				width: 50%;
+				background-color: white;
+				border: 1px solid grey;
+				margin-bottom: 20px;
+				text-align: justify;
+			}
+			.content h1 {
+				margin-top: 20px;
+			}
+			.content img {
+				width: 150px;
+				height: 100%;
+			}
+			.content a {
+				color: black;
+				font-weight: bold;
+			}
+			.floatleft {
+				float: left;
+				margin-right: 20px;
+			}
+			.floatright {
+				float: right;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+			.paragraph {
+				margin-block: 20px;
+			}
+			.right {
+				float: left;
+				width: 26%;
+				background-color: blue;
+				height: 440px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+				padding: 20px;
+			}
+			.right h4 {
+				color: aquamarine;
+				margin-bottom: 20px;
+			}
+			.right p {
+				color: white;
+				text-align: justify;
+				margin-bottom: 40px;
+			}
+			.right table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			.right table td {
+				border: 1px solid white;
+				text-align: center;
+				color: white;
+			}
+			.footer {
+				clear: both;
+				background-color: lightgray;
+				padding: 3px;
+				margin-top: 20px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h2>Welcome to My Homepage</h2>
+				<p>Use the menu to select difference style sheets</p>
+			</div>
+			<div class="left">
+				<ul>
+					<li><a href="">HOME</a></li>
+					<li><a href="">NEWS</a></li>
+					<li><a href="">SERVICES</a></li>
+					<li><a href="">RECRUITMENT</a></li>
+					<li><a href="">CONTACT US</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<h1>Same page Different<br />StyleSheets</h1>
+				<div class="paragraph">
+					<p>
+						<img
+							src="./img/Fallow-Deer-4-650x425.jpg"
+							alt="deer"
+							class="floatleft" />
+						This is a Demontration of how different stylesheet can
+						change the layout of your html Page. You can change the
+						layout of this page try selecting the different style
+						sheet in the menu, or by selecting one of the following
+						links
+					</p>
+				</div>
+				<div>
+					<a href="">StyleSheet1</a>
+					<a href="">StyleSheet2</a>
+					<a href="">StyleSheet3</a>
+					<a href="">StyleSheet4</a>
+				</div>
+				<h1>No Style</h1>
+				<div class="paragraph">
+					<p>
+						<img
+							src="./img/Fallow-Deer-4-650x425.jpg"
+							alt="deer"
+							class="floatright" />
+						This is a Demontration of how different stylesheet can
+						change the layout of your html Page. You can change the
+						layout of this page try selecting the different style
+						sheet in the menu, or by selecting one of the following
+						links
+					</p>
+				</div>
+			</div>
+			<div class="right">
+				<h4>SIDE BAR</h4>
+				<p>
+					Từ ngày 18/5 đến 14/6, độc giả chia sẻ khoảnh khắc đầu tiên
+					đáng nhớ của bé như ăn dặm, bi bỏ tập nói, chập chững những
+					bước đi đầu tiên; cảm xúc hồi hộp, lóng ngóng khi cha mẹ lần
+					đầu thay tã, tăm, massage, hát ru, mặc đồ... cho con, có cơ
+					hội nhận giải thưởng tiên mặt và quả tặng hấp dẫn
+				</p>
+				<h4>BẢNG QUY ĐỔI THÔNG SỐ</h4>
+				<table>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+				</table>
+			</div>
+			<div class="footer">
+				<p>
+					Chuyên mục văn hoá giải trí của VnExpress. 2004
+					Ngoisao.net<br />Tầng 5, Tòa nhà FPT Cầu Giấy, phố Duy Tân,
+					Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội<br />Email:
+					lienhe@ngoisao.net | Điện thoại: 024 7300 9999 - Ext 4546
+				</p>
+			</div>
+		</div>
+	</body>
 </html>
