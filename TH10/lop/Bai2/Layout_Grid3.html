@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Layout Grid 3</title>
+		<style>
+			.grid-container {
+				display: grid;
+				grid-template-columns: auto auto auto auto auto auto auto auto auto;
+				grid-gap: 10px;
+				background-color: #2196f3;
+				padding: 10px;
+			}
+			.grid-container > div {
+				background-color: rgba(255, 255, 255, 0.8);
+				text-align: center;
+				padding: 20px 0;
+				font-size: 30px;
+			}
+			.header {
+				grid-column: 1 / span 9;
+				grid-row: 1;
+			}
+			.left{
+				grid-column: 1 / span 3;
+				grid-row: 2 / span 2;
+			}
+			.content {
+				grid-column: 4 / span 3;
+				grid-row: 2 / span 2;
+			}
+			.content p {
+				margin: 0;
+			}
+			.right {
+				grid-column: 7 / span 3;
+				grid-row: 2 / span 2;
+			}
+			.footer {
+				grid-column: 1 / span 9;
+				grid-row: 4;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-container">
+			<div class="header">Header</div>
+			<div class="left">Left</div>
+			<div class="content">
+				<p>Content</p>
+				<p>Content</p>
+				<p>Content</p>
+				<p>Content</p>
+				<p>Content</p>
+				<p>Content</p>
+				<p>Content</p>
+			</div>
+			<div class="right">Right</div>
+			<div class="footer">Footer</div>
+		</div>
+	</body>
+</html>
