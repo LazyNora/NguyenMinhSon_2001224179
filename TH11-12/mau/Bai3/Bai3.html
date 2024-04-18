@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				outline: none;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				background-color: #f1f5f8;
+			}
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			a:hover,
+			a:focus {
+				text-decoration: underline;
+			}
+			.container {
+				width: 100%;
+				max-width: 900px;
+				margin: 50px auto;
+				padding: 50px;
+				text-align: center;
+			}
+			.title {
+				font-size: 2rem;
+				color: #333;
+				margin-bottom: 1em;
+			}
+			.title::after {
+				content: "";
+				display: block;
+				width: 2em;
+				height: 0.1em;
+				background-color: #05aaea;
+				margin: 0.1em auto;
+			}
+			.reviews {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				margin-top: 50px;
+				background-color: white;
+				padding: 30px;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			.reviews:hover,
+			.reviews:focus-within {
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+			}
+			.avatar {
+				position: relative;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: #f1f1f1;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			.avatar .icon {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 40px;
+				height: 40px;
+				object-fit: cover;
+			}
+			.avatar .bg-circle {
+				position: absolute;
+				top: -5px;
+				left: 5px;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background-color: #05aaea;
+			}
+			.avatar .avatar-circle {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				background-color: #f1f1f1;
+				object-fit: cover;
+			}
+			.review {
+				margin-top: 20px;
+			}
+			.review .name {
+				font-size: 1rem;
+				color: #333;
+				letter-spacing: 0.1em;
+				margin-bottom: 0.3em;
+			}
+			.review .job {
+				font-size: 0.8rem;
+				color: #05aaea;
+				text-transform: uppercase;
+				margin-bottom: 1em;
+			}
+			.review .text {
+				font-size: 1.2rem;
+				color: #777;
+			}
+			.nav {
+				margin-top: 1em;
+			}
+			.wrapper {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+			}
+			.wrapper .btn {
+				background-color: #fff;
+				padding: 0.25em;
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: transform 0.3s ease;
+			}
+			.wrapper .btn svg {
+				fill: #05aaea;
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+			}
+			.wrapper .btn:focus {
+				outline: 0.1em solid #05aaea;
+			}
+			.wrapper .btn.left:hover,
+			.wrapper .btn.left:focus {
+				transform: translateX(-0.25em);
+			}
+			.wrapper .btn.right:hover,
+			.wrapper .btn.right:focus {
+				transform: translateX(0.25em);
+			}
+			.nav .random {
+				background-color: white;
+				color: #05aaea;
+				padding: 0.25em 0.75em;
+				border: 0.1em solid #05aaea;
+				border-radius: 0.3em;
+				cursor: pointer;
+				margin-top: 1em;
+			}
+			.nav .random:hover,
+			.nav .random:focus {
+				background-color: #05aaea;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">Các Đánh Giá</h1>
+			<div class="reviews">
+				<div class="avatar">
+					<div class="bg-circle"></div>
+					<img
+						class="avatar-circle"
+						src="./img/ava1.jfif"
+						alt="avatar" />
+					<img
+						class="icon"
+						src="./img/quote-icon.png"
+						alt="quote-icon" />
+				</div>
+				<div class="review">
+					<h2 class="name"><a href="">Trong Nghia</a></h2>
+					<p class="job"><a href="">Web Developer</a></p>
+					<p class="text">Tuyệt vời, đánh giá 5*.</p>
+				</div>
+				<div class="nav">
+					<div class="wrapper">
+						<button class="btn left">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 320 512">
+								<path
+									d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+							</svg>
+						</button>
+						<button class="btn right">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 320 512">
+								<path
+									d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+							</svg>
+						</button>
+					</div>
+					<button class="random">Ngẫu Nhiên</button>
+				</div>
+			</div>
+		</div>
+		<script>
+			const reviews = [
+				{
+					id: 1,
+					name: "Trong Nghia",
+					job: "Web Developer",
+					img: "./img/ava1.jfif",
+					text: "Tuyệt vời, đánh giá 5*.",
+				},
+				{
+					id: 2,
+					name: "Ái Thư",
+					job: "HLV Dinh Dưỡng",
+					img: "./img/ava2.jpg",
+					text: "Sản phẩm dinh dưỡng này rất tuyệt vời.",
+				},
+				{
+					id: 3,
+					name: "Thanh Dung",
+					job: "Marketer",
+					img: "./img/ava3.png",
+					text: "Tôi thích sản phẩm này, thường sử dụng cho cả gia đình.",
+				},
+				{
+					id: 4,
+					name: "Trần Huỳnh",
+					job: "Giám Đốc",
+					img: "./img/ava4.jpg",
+					text: "Cực kỳ yêu thích !!!",
+				},
+			];
+			let currentPerson = 0;
+			const img = document.querySelector(".avatar-circle");
+			const author = document.querySelector(".name");
+			const job = document.querySelector(".job");
+			const info = document.querySelector(".text");
+
+			function showPerson(person) {
+				const item = reviews[person];
+				img.src = item.img;
+				author.textContent = item.name;
+				job.textContent = item.job;
+				info.textContent = item.text;
+			}
+
+			window.addEventListener("DOMContentLoaded", function () {
+				showPerson(currentPerson);
+			});
+
+			const prevBtn = document.querySelector(".left");
+			const nextBtn = document.querySelector(".right");
+			const randomBtn = document.querySelector(".random");
+
+			prevBtn.addEventListener("click", function () {
+				currentPerson--;
+				if (currentPerson < 0) {
+					currentPerson = reviews.length - 1;
+				}
+				showPerson(currentPerson);
+			});
+
+			nextBtn.addEventListener("click", function () {
+				currentPerson++;
+				if (currentPerson > reviews.length - 1) {
+					currentPerson = 0;
+				}
+				showPerson(currentPerson);
+			});
+
+			randomBtn.addEventListener("click", function () {
+				let temp = currentPerson;
+				while (temp === currentPerson) {
+					temp = Math.floor(Math.random() * reviews.length);
+				}
+				currentPerson = temp;
+				showPerson(currentPerson);
+			});
+		</script>
+	</body>
+</html>
