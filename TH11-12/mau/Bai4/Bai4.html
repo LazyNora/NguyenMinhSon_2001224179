@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 4</title>
+		<style>
+			@font-face {
+				font-family: "GoodVibrations";
+				src: url(./assets/GoodVibrations-Script-400.ttf);
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				outline: none;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				background-color: #f1f5f8;
+			}
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			a:hover,
+			a:focus {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			button {
+				background-color: transparent;
+				border: none;
+				cursor: pointer;
+			}
+			button:hover,
+			button:focus {
+				outline: none;
+			}
+			.container {
+				width: 100%;
+				max-width: 900px;
+				margin: 50px auto;
+				padding: 50px;
+				text-align: center;
+			}
+			.title {
+				font-family: "GoodVibrations", sans-serif;
+				font-size: 4rem;
+				letter-spacing: 0.1em;
+				color: #c59d5f;
+				margin-bottom: 1em;
+			}
+			.questions {
+				display: flex;
+				flex-direction: column;
+				gap: 2em;
+			}
+			.question {
+				background-color: white;
+				padding: 2em;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				width: 100%;
+			}
+      .question:hover,
+      .question:focus-within {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+			.question .toggle {
+				font-size: 1.5rem;
+				color: #555;
+				cursor: pointer;
+				display: flex;
+				font-weight: normal;
+				width: 100%;
+				letter-spacing: 0.125em;
+				text-transform: capitalize;
+				justify-content: space-between;
+			}
+			.question .toggle::after {
+				content: "+";
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				letter-spacing: 0;
+				font-weight: bold;
+				font-size: 1.5rem;
+				font-family: Arial, sans-serif;
+				color: #c59d5f;
+				border: 0.125em solid #c59d5f;
+				border-radius: 5px;
+				width: 20px;
+				height: 20px;
+				max-width: 20px;
+				max-height: 20px;
+			}
+
+			.question .desc {
+				display: none;
+				margin-top: 1em;
+				text-align: left;
+				color: #7992a8;
+				line-height: 1.5em;
+			}
+			.question .desc::before {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: #e2e2e2;
+				margin-bottom: 1em;
+			}
+			.question.active .desc {
+				display: block;
+			}
+			.question.active .toggle::after {
+				content: "–";
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">General Questions</h1>
+			<div class="questions">
+				<div class="question active">
+					<button class="toggle">Câu hỏi 1?</button>
+					<div class="desc">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Inventore facere soluta omnis provident rem
+							perspiciatis exercitationem ullam hic veniam eos.
+						</p>
+					</div>
+				</div>
+				<div class="question">
+					<button class="toggle">Câu hỏi 2?</button>
+					<div class="desc">
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing
+							elit. Tempore illum ratione voluptas provident?
+							Neque sint iste delectus eius placeat repudiandae?
+						</p>
+					</div>
+				</div>
+				<div class="question">
+					<button class="toggle">Câu hỏi 3?</button>
+					<div class="desc">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Est repellendus nam excepturi itaque
+							voluptatibus blanditiis at esse numquam ipsum quae.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			const toggles = document.querySelectorAll(".toggle");
+			toggles.forEach((toggle) => {
+				toggle.addEventListener("click", () => {
+					const parent = toggle.parentElement;
+					parent.classList.toggle("active");
+				});
+			});
+		</script>
+	</body>
+</html>
