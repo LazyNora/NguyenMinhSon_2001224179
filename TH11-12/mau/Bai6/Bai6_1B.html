@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 6.1B</title>
+		<style>
+			.t1 tr {
+				height: 50px;
+			}
+			.dd {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div
+			class="result"
+			style="width: 48%; margin-top: 30px; margin-inline: auto">
+			<h2 align="center" class="dd">THÔNG TIN BẠN VỪA NHẬP</h2>
+			<div
+				style="
+					border: #666 solid 1px;
+					width: 100%;
+					margin: 0 auto;
+					border-radius: 5px;
+				">
+				<table class="t1" style="margin: 0 auto">
+					<tr bgcolor="#CCCCCC">
+						<td colspan="2">
+							<h3 style="margin-left: 20px">
+								THÔNG TIN NGƯỜI GỬI
+							</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>* Người gửi</td>
+						<td id="TenNG" class="dd"></td>
+					</tr>
+					<tr>
+						<td>* E-Mail</td>
+						<td id="EmailNG" class="dd"></td>
+					</tr>
+					<tr>
+						<td>* Điện thoại</td>
+						<td id="PhoneNG" class="dd"></td>
+					</tr>
+				</table>
+				<br />
+				<table class="t1" style="margin: 0 auto">
+					<tr bgcolor="#cccccc">
+						<td colspan="2">
+							<h3 style="margin-left: 20px">
+								THÔNG TIN NGƯỜI NHẬN
+							</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>* Người nhận</td>
+						<td id="TenNN" class="dd"></td>
+					</tr>
+					<tr>
+						<td>* Điện thoại</td>
+						<td id="PhoneNN" class="dd"></td>
+					</tr>
+					<tr>
+						<td>* Địa chỉ</td>
+						<td id="AddressNN" class="dd"></td>
+					</tr>
+					<tr>
+						<td>* Tỉnh/TP</td>
+						<td id="CityNN" class="dd"></td>
+					</tr>
+					<tr>
+						<td>* Quận</td>
+						<td id="DistrictNN" class="dd"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<script>
+			window.onload = LoadSessionStorage();
+
+			function LoadSessionStorage() {
+				document.getElementById("TenNG").innerHTML =
+					sessionStorage.getItem("TenNG");
+				document.getElementById("EmailNG").innerHTML =
+					sessionStorage.getItem("EmailNG");
+				document.getElementById("PhoneNG").innerHTML =
+					sessionStorage.getItem("PhoneNG");
+				document.getElementById("TenNN").innerHTML =
+					sessionStorage.getItem("TenNN");
+				document.getElementById("PhoneNN").innerHTML =
+					sessionStorage.getItem("PhoneNN");
+				document.getElementById("AddressNN").innerHTML =
+					sessionStorage.getItem("AddressNN");
+				document.getElementById("CityNN").innerHTML =
+					sessionStorage.getItem("CityNN");
+				document.getElementById("DistrictNN").innerHTML =
+					sessionStorage.getItem("DistrictNN");
+
+				sessionStorage.clear();
+			}
+		</script>
+	</body>
+</html>

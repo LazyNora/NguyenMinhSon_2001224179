@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 6.1A</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				line-height: 1.5em;
+			}
+			input {
+				height: 50px;
+				width: 100%;
+			}
+			select {
+				height: 50px;
+				width: 100%;
+			}
+			h3 {
+				margin-block: 1em;
+			}
+			.container {
+				width: 100%;
+				display: flex;
+				justify-content: space-evenly;
+				flex-direction: row;
+			}
+			.t1 tr {
+				height: 50px;
+			}
+			.dd {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<form
+				name="F1"
+				method="post"
+				style="border: #666 solid 1px; width: 48%; border-radius: 5px">
+				<table style="width: 100%">
+					<tr bgcolor="#CCCCCC">
+						<td colspan="2">
+							<h3 style="margin-left: 20px">
+								THÔNG TIN NGƯỜI GỬI
+							</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>* Người gửi</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Nhập họ và tên"
+								size="100"
+								id="txt_NameSender"
+								name="txt_NameSender" />
+						</td>
+					</tr>
+					<tr>
+						<td>E-Mail</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Nhập Email"
+								size="100"
+								id="txt_Emailsender"
+								name="txt_Emailsender" />
+						</td>
+					</tr>
+					<tr>
+						<td>* Điện thoại</td>
+						<td>
+							<input
+								type="number"
+								placeholder="Nhập phone"
+								size="100"
+								id="txt_PhoneNumSender"
+								name="txt_PhoneNumSender" />
+						</td>
+					</tr>
+				</table>
+				<table style="width: 100%; margin-top: 30px">
+					<tr bgcolor="#cccccc">
+						<td colspan="2">
+							<h3 style="margin-left: 20px">
+								THÔNG TIN NGƯỜI NHẬN
+							</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>Người nhận</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Nhập họ và tên"
+								size="100"
+								id="txt_NameReciever"
+								name="txt_NameReciever" />
+						</td>
+					</tr>
+					<tr>
+						<td>* Điện thoại</td>
+						<td>
+							<input
+								type="number"
+								placeholder="Nhập điện thoại"
+								size="100"
+								id="txt_PhoneNumReciever"
+								name="txt_PhoneNumReciever" />
+						</td>
+					</tr>
+					<tr>
+						<td>* Địa chi</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Nhập địa chỉ"
+								size="100"
+								id="txt_AddReciever"
+								name="txt_AddReciever" />
+						</td>
+					</tr>
+
+					<tr>
+						<td>Tinh/TP</td>
+						<td>
+							<select name="DDL_City" id="DDL_City">
+								<option values="TP.HCM nội thành">
+									TP.HCM nội thành
+								</option>
+								<option value="Hà Nội">Hà Nội</option>
+								<option value="Huế">Huế</option>
+								<option value="Đà Nẵng">Đà Nẵng</option>
+								<option value="Quảng Ninh">Quảng Ninh</option>
+								<option value="Cần Thơ">Cần Thơ</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>* Quận</td>
+						<td>
+							<select name="DDL_District" id="DDL_District">
+								<option value="Quận 1">Quận 1</option>
+								<option value="Quận 2">Quận 2</option>
+								<option value="Quận 3">Quận 3</option>
+								<option value="Quận Tân Phú">
+									Quận Tân Phú
+								</option>
+								<option value="Quận Tân Bình">
+									Quận Tân Bình
+								</option>
+								<option value="Quận Thủ Đức">
+									Quận Thủ Đức
+								</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<center>
+					<input
+						type="button"
+						value="GỬI THÔNG TIN"
+						style="
+							height: 50px;
+							background-color: #e1e1e1;
+							border: #666 solid 1px;
+							width: auto;
+							padding: 3px;
+						"
+						onclick="XuatThongTin()" />
+					<input
+						type="button"
+						value="GỬI THÔNG TIN SANG TRANG 1B"
+						style="
+							height: 50px;
+							background-color: #09f;
+							border: 1px solid #666;
+							width: auto;
+							padding: 3px;
+							margin-left: 100px;
+						"
+						onclick="XuatThongTinTrangKhac()" />
+				</center>
+			</form>
+			<div class="result" style="width: 48%; margin-top: 30px">
+				<h2 align="center" class="dd">THÔNG TIN BẠN VỪA NHẬP</h2>
+				<div
+					style="
+						border: #666 solid 1px;
+						width: 100%;
+						margin: 0 auto;
+						border-radius: 5px;
+					">
+					<table class="t1" style="margin: 0 auto">
+						<tr bgcolor="#CCCCCC">
+							<td colspan="2">
+								<h3 style="margin-left: 20px">
+									THÔNG TIN NGƯỜI GỬI
+								</h3>
+							</td>
+						</tr>
+						<tr>
+							<td>* Người gửi</td>
+							<td id="TenNG" class="dd"></td>
+						</tr>
+						<tr>
+							<td>* E-Mail</td>
+							<td id="EmailNG" class="dd"></td>
+						</tr>
+						<tr>
+							<td>* Điện thoại</td>
+							<td id="PhoneNG" class="dd"></td>
+						</tr>
+					</table>
+					<br />
+					<table class="t1" style="margin: 0 auto">
+						<tr bgcolor="#cccccc">
+							<td colspan="2">
+								<h3 style="margin-left: 20px">
+									THÔNG TIN NGƯỜI NHẬN
+								</h3>
+							</td>
+						</tr>
+						<tr>
+							<td>* Người nhận</td>
+							<td id="TenNN" class="dd"></td>
+						</tr>
+						<tr>
+							<td>* Điện thoại</td>
+							<td id="PhoneNN" class="dd"></td>
+						</tr>
+						<tr>
+							<td>* Địa chỉ</td>
+							<td id="AddressNN" class="dd"></td>
+						</tr>
+						<tr>
+							<td>* Tỉnh/TP</td>
+							<td id="CityNN" class="dd"></td>
+						</tr>
+						<tr>
+							<td>* Quận</td>
+							<td id="DistrictNN" class="dd"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script>
+			function XuatThongTin() {
+				var TenNG = document.getElementById("txt_NameSender").value;
+				var EmailNG = document.getElementById("txt_Emailsender").value;
+				var PhoneNG =
+					document.getElementById("txt_PhoneNumSender").value;
+				var TenNN = document.getElementById("txt_NameReciever").value;
+				var PhoneNN = document.getElementById(
+					"txt_PhoneNumReciever"
+				).value;
+				var AddressNN =
+					document.getElementById("txt_AddReciever").value;
+				var CityNN = document.getElementById("DDL_City").value;
+				var DistrictNN = document.getElementById("DDL_District").value;
+				document.getElementById("TenNG").innerHTML = TenNG;
+				document.getElementById("EmailNG").innerHTML = EmailNG;
+				document.getElementById("PhoneNG").innerHTML = PhoneNG;
+				document.getElementById("TenNN").innerHTML = TenNN;
+				document.getElementById("PhoneNN").innerHTML = PhoneNN;
+				document.getElementById("AddressNN").innerHTML = AddressNN;
+				document.getElementById("CityNN").innerHTML = CityNN;
+				document.getElementById("DistrictNN").innerHTML = DistrictNN;
+			}
+			function XuatThongTinTrangKhac() {
+				var TenNG = document.getElementById("txt_NameSender").value;
+				var EmailNG = document.getElementById("txt_Emailsender").value;
+				var PhoneNG =
+					document.getElementById("txt_PhoneNumSender").value;
+				var TenNN = document.getElementById("txt_NameReciever").value;
+				var PhoneNN = document.getElementById(
+					"txt_PhoneNumReciever"
+				).value;
+				var AddressNN =
+					document.getElementById("txt_AddReciever").value;
+				var CityNN = document.getElementById("DDL_City").value;
+				var DistrictNN = document.getElementById("DDL_District").value;
+
+				sessionStorage.setItem("TenNG", TenNG);
+				sessionStorage.setItem("EmailNG", EmailNG);
+				sessionStorage.setItem("PhoneNG", PhoneNG);
+				sessionStorage.setItem("TenNN", TenNN);
+				sessionStorage.setItem("PhoneNN", PhoneNN);
+				sessionStorage.setItem("AddressNN", AddressNN);
+				sessionStorage.setItem("CityNN", CityNN);
+				sessionStorage.setItem("DistrictNN", DistrictNN);
+
+				window.open("./Bai6_1B.html");
+			}
+		</script>
+	</body>
+</html>
