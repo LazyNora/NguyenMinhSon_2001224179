@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Task List</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: "Roboto", sans-serif;
+				background-color: #eff3f6;
+			}
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				max-width: 30%;
+				margin: 50px auto;
+				background-color: #fff;
+				padding: 2em;
+				border-radius: 0.5em;
+				min-width: 300px;
+			}
+			.tasklist-container {
+				width: 100%;
+				min-width: 400px;
+			}
+			.tasklist-title {
+				font-size: 1.5rem;
+				margin: 0;
+				text-transform: capitalize;
+				color: #0d3551;
+				text-align: center;
+				margin-top: 1em;
+				letter-spacing: 0.1em;
+			}
+			.tasklist-addtask {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 1em 0 2em 0;
+			}
+			.tasklist-input {
+				flex: 1;
+				padding: 0.5em 1em;
+				border: none;
+				border-radius: 5px 0 0 5px;
+				background-color: #f1f5f8;
+			}
+			.btn-add {
+				padding: 0.5em 1.5em;
+				background-color: #a5d5f8;
+				border: none;
+				border-radius: 0 5px 5px 0;
+				cursor: pointer;
+			}
+			.tasks-wrapper {
+				color: #333;
+			}
+			.tasks-wrapper ul {
+				list-style-type: none;
+			}
+			.tasks-wrapper li {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0.5em 1em;
+			}
+			.task-text {
+				flex: 1;
+				text-wrap: wrap;
+				min-width: 280px;
+				overflow: hidden;
+			}
+			.task-edit,
+			.task-delete {
+				padding: 0.5em;
+				background-color: transparent;
+				border: none;
+				cursor: pointer;
+			}
+			.icon {
+				width: 12px;
+				height: 12px;
+			}
+			.tasklist-clear {
+				display: flex;
+				justify-content: center;
+				margin-top: 1em;
+			}
+			.btn-clear {
+				font-size: 16px;
+				letter-spacing: 0.1em;
+				color: #e66b6b;
+				background-color: white;
+				text-transform: capitalize;
+				padding: 0.5em 1.5em;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="tasklist-container">
+				<h2 class="tasklist-title">Danh sách công việc</h2>
+				<div class="tasklist-addtask">
+					<input
+						id="task-input"
+						type="text"
+						class="tasklist-input"
+						placeholder="Thêm công việc" />
+					<button class="btn-add">Thêm</button>
+				</div>
+				<div class="tasks-wrapper">
+					<ul></ul>
+				</div>
+			</div>
+			<div class="tasklist-clear">
+				<button class="btn-clear">Xóa hết</button>
+			</div>
+		</div>
+		<script>
+			const taskInput = document.getElementById("task-input");
+			const btnAdd = document.querySelector(".btn-add");
+			const tasksWrapper = document.querySelector(".tasks-wrapper ul");
+			const btnClear = document.querySelector(".btn-clear");
+
+			// Load tasks from local storage
+			function loadTasks() {
+				const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+				tasks.forEach((taskText) => {
+					const task = document.createElement("li");
+					task.innerHTML = `
+            <span class="task-text">${taskText}</span>
+            <div class="btn-wrapper">
+              <button class="task-edit">
+                <img class="icon" src="./img/pen-to-square.svg" alt="edit" />
+              </button>
+              <button class="task-delete">
+                <img class="icon" src="./img/trash.svg" alt="delete" />
+              </button>
+            </div>
+          `;
+					tasksWrapper.appendChild(task);
+				});
+			}
+
+			loadTasks();
+
+			// Add task
+			btnAdd.addEventListener("click", () => {
+				const taskText = taskInput.value;
+				if (taskText) {
+					const task = document.createElement("li");
+					task.innerHTML = `
+            <span class="task-text">${taskText}</span>
+            <button class="task-edit">
+              <img class="icon" src="./img/pen-to-square.svg" alt="edit" />
+            </button>
+            <button class="task-delete">
+              <img class="icon" src="./img/trash.svg" alt="delete" />
+            </button>
+          `;
+					tasksWrapper.appendChild(task);
+					taskInput.value = "";
+					saveTasks();
+				}
+			});
+
+			// Edit task
+			tasksWrapper.addEventListener("click", (e) => {
+				if (
+					e.target.matches(".task-delete") ||
+					e.target.matches(".task-delete img")
+				) {
+					e.target.closest("li").remove();
+					saveTasks();
+				} else if (
+					e.target.matches(".task-edit") ||
+					e.target.matches(".task-edit img")
+				) {
+					const taskText = e.target
+						.closest("li")
+						.querySelector(".task-text");
+					const newTaskText = prompt(
+						"Nhập công việc mới",
+						taskText.textContent
+					);
+					if (newTaskText) {
+						taskText.textContent = newTaskText;
+						saveTasks();
+					}
+				}
+			});
+
+			// Clear tasks
+			btnClear.addEventListener("click", () => {
+				tasksWrapper.innerHTML = "";
+				saveTasks();
+			});
+
+			// Save tasks to local storage
+			function saveTasks() {
+				const tasks = Array.from(
+					tasksWrapper.querySelectorAll(".task-text"),
+					(task) => task.textContent
+				);
+				localStorage.setItem("tasks", JSON.stringify(tasks));
+			}
+		</script>
+	</body>
+</html>
