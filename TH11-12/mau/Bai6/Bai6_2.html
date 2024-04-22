@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 6.2</title>
+		<style>
+			.container {
+				margin: auto;
+				border: 1px solid gray;
+				width: fit-content;
+			}
+			.title {
+				background-color: #00ccff;
+				text-align: center;
+				font-size: larger;
+				font-weight: bold;
+				padding: 1em;
+			}
+			input {
+				box-sizing: border-box;
+				width: 33em;
+				height: 3em;
+			}
+			form {
+				padding: 1.5em;
+			}
+			table {
+				width: 100%;
+			}
+			td {
+				display: flex;
+				flex-direction: column;
+				padding-bottom: 1em;
+			}
+			.btn-submit {
+				text-align: center;
+			}
+			.btn-submit > input[type="button"] {
+				background-color: #00ccff;
+				padding: 7px;
+				border: 1px solid lightgray;
+				width: auto;
+			}
+			.warning {
+				color: red;
+				margin-top: 5px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">ĐĂNG KÝ TÀI KHOẢN</div>
+			<div class="form">
+				<form name="Form1" method="post">
+					<table>
+						<tr>
+							<td>
+								<label for="name">Tên</label>
+								<input type="text" id="name" name="name" />
+								<p class="warning">
+									Vui lòng kiểm tra lại Tên!
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="email">Email</label>
+								<input type="email" name="email" id="email" />
+								<p class="warning">
+									Vui lòng kiểm tra lại Email!
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="password">Mật Khẩu</label>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									aria-hidden="true" />
+								<p class="warning">
+									Mật Khẩu phải từ 10 ký tự!
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="confirm_password"
+									>Xác nhận Mật Khẩu</label
+								>
+								<input
+									type="password"
+									name="confirm_password"
+									id="confirm_password"
+									aria-hidden="true" />
+								<p class="warning">Mật Khẩu không khớp!</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="phone">Số Điện Thoại</label>
+								<input type="number" name="phone" id="phone" />
+								<p class="warning">
+									Số điện thoại phải là 10 chữ số!
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="country">Nhập Mã Quốc Gia</label>
+								<input
+									type="text"
+									name="country"
+									id="country" />
+								<p class="warning">Mã Quốc Gia không hợp lệ!</p>
+							</td>
+						</tr>
+					</table>
+					<div class="btn-submit">
+						<input
+							type="button"
+							value="TẠO TÀI KHOẢN"
+							onclick="Validate()" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<script>
+			function Validate() {
+				// - Tên bắt buộc nhập, tối thiểu 10 ký tự, không chứa ký tự đặc biệt
+				// - Email đúng định dạng: characters@characters.domain
+				// - Mật khẩu bắt buộc nhập, tối thiểu 10 ký tự
+				// - Xác nhận mật khẩu phải trùng với mật khẩu đã nhập
+				// - Số điện thoại là 10 ký số [0-9]{10}
+				// - Mã Quốc gia là 2 ký tự [A-Za-z]{2}
+
+				// Get values from input fields
+				const name = document.getElementById("name").value;
+				const email = document.getElementById("email").value;
+				const password = document.getElementById("password").value;
+				const confirm_password =
+					document.getElementById("confirm_password").value;
+				const phone = document.getElementById("phone").value;
+				const country = document.getElementById("country").value;
+
+				// Define patterns
+				const namePattern = /^[a-zA-Z]{10,}$/;
+				const emailPattern =
+					/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+				const passwordPattern = /^.{10,}$/;
+				const phonePattern = /^[0-9]{10}$/;
+				const countryPattern = /^[a-zA-Z]{2}$/;
+
+				// Get warning elements
+				const nameWarning = document.querySelector("#name + .warning");
+				const emailWarning =
+					document.querySelector("#email + .warning");
+				const passwordWarning = document.querySelector(
+					"#password + .warning"
+				);
+				const confirm_passwordWarning = document.querySelector(
+					"#confirm_password + .warning"
+				);
+				const phoneWarning =
+					document.querySelector("#phone + .warning");
+				const countryWarning = document.querySelector(
+					"#country + .warning"
+				);
+
+				// Display warnings
+				nameWarning.style.display = namePattern.test(name)
+					? "none"
+					: "block";
+				emailWarning.style.display = emailPattern.test(email)
+					? "none"
+					: "block";
+				passwordWarning.style.display = passwordPattern.test(password)
+					? "none"
+					: "block";
+				confirm_passwordWarning.style.display =
+					password === confirm_password ? "none" : "block";
+				phoneWarning.style.display = phonePattern.test(phone)
+					? "none"
+					: "block";
+				countryWarning.style.display = countryPattern.test(country)
+					? "none"
+					: "block";
+			}
+		</script>
+	</body>
+</html>
