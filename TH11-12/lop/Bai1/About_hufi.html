@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About HUFI</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f1f5f8;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+
+			.header {
+				text-align: center;
+				margin-bottom: 60px;
+			}
+
+			.header h1 {
+				font-size: 2em;
+				color: #333;
+				margin-bottom: 10px;
+				letter-spacing: 0.1em;
+			}
+
+			.header p {
+				font-size: 1.2em;
+				color: #666;
+			}
+
+			.content {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.image {
+				flex: 1;
+			}
+
+			.image img {
+				width: 100%;
+				height: 20em;
+				object-fit: cover;
+				border-radius: 0.5em;
+			}
+
+			.wrapper {
+				flex: 1;
+				background-color: #fff;
+				border-radius: 0.5em;
+				margin-left: 2.5em;
+				overflow: hidden;
+			}
+
+			.tabs {
+				display: flex;
+				margin-bottom: 20px;
+				background-color: #dbe2ec;
+			}
+
+			.tab {
+				flex: 1;
+				text-align: center;
+			}
+
+			.tab input[type="radio"] {
+				width: 0;
+				height: 0;
+				position: absolute;
+				z-index: -1;
+			}
+
+			.tab input[type="radio"] + label {
+				display: block;
+				padding: 15px 0;
+				background-color: #dbe2ec;
+				cursor: pointer;
+				letter-spacing: 0.2em;
+				box-sizing: border-box;
+			}
+
+			.tab label:hover {
+				background-color: #e9e9e9;
+			}
+
+			.tab input:checked + label {
+				background-color: #fff;
+			}
+
+			.tab-content {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.tab-item {
+				display: none;
+				padding: 0 20px;
+				background-color: #fff;
+				border-radius: 5px;
+			}
+
+			.tab-item h2 {
+				margin-bottom: 10px;
+				color: #333;
+				font-size: 16px;
+				letter-spacing: 0.2em;
+			}
+
+			.tab-item p {
+				color: #666;
+				line-height: 1.5em;
+			}
+
+			.tab-item.active {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>About</h1>
+				<p>Trường Đại Học Công Nghiệp Thực phẩm TPHCM</p>
+			</div>
+			<div class="content">
+				<div class="image">
+					<img src="./img/unnamed.jpg" alt="HUFI" />
+				</div>
+				<div class="wrapper">
+					<div class="tabs">
+						<div class="tab">
+							<input type="radio" name="tab" id="tab1" />
+							<label for="tab1">Lịch Sử</label>
+						</div>
+						<div class="tab">
+							<input type="radio" name="tab" id="tab2" />
+							<label for="tab2">Tầm Nhìn</label>
+						</div>
+						<div class="tab">
+							<input type="radio" name="tab" id="tab3" />
+							<label for="tab3">Sứ Mạng</label>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="tab-item">
+							<h2>Lịch Sử</h2>
+							<p>
+								1982: Sau ngày thống nhất đất nước, nhu cầu cần
+								bộ công nhân viên chức các ngành, các địa phương
+								ở miền Nam rất lớn. Ngày 09/09/1982 Bộ Công
+								nghiệp Thực phẩm bạn hành quyết định 986/CNTP về
+								việc thành lập trường Kinh tế Kỹ thuật Công
+								nghiệp Thực phẩm TP. Hồ Chí Minh nhằm bồi dưỡng,
+								đào tạo đội ngũ cán bộ kinh tế kỹ thuật cho
+								ngành công nghiệp thực phẩm tại phía Nam. ...
+							</p>
+						</div>
+						<div class="tab-item">
+							<h2>Tầm Nhìn</h2>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Consequatur, praesentium.
+								Assumenda quasi dicta tempore velit hic ratione,
+								magnam nihil similique doloremque quisquam!
+								Optio eaque iusto ipsa nihil, eveniet officia
+								magnam?
+							</p>
+						</div>
+						<div class="tab-item">
+							<h2>Sứ Mạng</h2>
+							<p>
+								Lorem ipsum, dolor sit amet consectetur
+								adipisicing elit. Maxime totam quibusdam, nam ea
+								inventore nostrum pariatur a ipsum atque quia
+								impedit quae cupiditate voluptates minima
+								nesciunt. Mollitia explicabo non assumenda!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			const tabs = document.querySelectorAll(
+				".tab input[type=radio][name=tab]"
+			);
+			const tabItems = document.querySelectorAll(".tab-item");
+
+			tabs.forEach((tab, index) => {
+				tab.addEventListener("change", () => {
+					tabItems.forEach((item) => {
+						item.classList.remove("active");
+					});
+					tabItems[index].classList.add("active");
+				});
+			});
+
+			tabs[0].checked = true;
+			tabItems[0].classList.add("active");
+		</script>
+	</body>
+</html>
