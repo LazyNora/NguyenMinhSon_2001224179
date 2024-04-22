@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sale</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: Arial, sans-serif;
+        background-color: #f1f5f8;
+			}
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 1000px;
+				margin: 50px auto;
+			}
+			.evencolumns {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
+			.image {
+				flex: 1;
+			}
+			.image img {
+				width: 100%;
+			}
+			.sale {
+				flex: 1;
+				padding: 0 2.5em;
+				letter-spacing: 0.1em;
+			}
+			.sale h2 {
+				font-size: 1.5rem;
+				margin: 0;
+				text-transform: uppercase;
+				color: #4079a5;
+			}
+			.sale p {
+				font-weight: bold;
+				margin: 0.25em 0 1.5em 0;
+				text-transform: capitalize;
+			}
+			p.subtext {
+				font-size: 0.8rem;
+				color: #b9c4cd;
+				font-weight: normal;
+				letter-spacing: normal;
+				text-transform: none;
+			}
+			.timer-wrapper {
+				display: flex;
+				justify-content: start;
+				align-items: center;
+				margin-top: 20px;
+			}
+			.timer {
+				display: flex;
+			}
+			.time {
+				text-align: center;
+				margin-right: 10px;
+				background-color: #102a41;
+				color: white;
+				width: 4em;
+				height: 4em;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.time span {
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+			.time p {
+				text-transform: uppercase;
+				letter-spacing: normal;
+				font-size: 0.8rem;
+				font-weight: normal;
+				margin: 0;
+			}
+			.sale-end {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="evencolumns">
+				<div class="image">
+					<img src="./img/Screenshot_5.png" alt="Sale off 70%" />
+				</div>
+				<div class="sale">
+					<h2>Sale up to 70% off</h2>
+					<p>Kết thúc vào: <span class="end-at"></span></p>
+					<p class="subtext">
+						Nhanh chân đến mua ngay, chương trình sẽ kết thúc nhanh
+						chóng.
+					</p>
+					<div class="timer-wrapper">
+						<div class="timer">
+							<div class="time">
+								<span>00</span>
+								<p>Ngày</p>
+							</div>
+							<div class="time">
+								<span>00</span>
+								<p>Giờ</p>
+							</div>
+							<div class="time">
+								<span>00</span>
+								<p>Phút</p>
+							</div>
+							<div class="time">
+								<span>00</span>
+								<p>Giây</p>
+							</div>
+						</div>
+						<div class="sale-end">
+							<p>Chương trình sale đã kết thúc!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("2024-05-10T17:00:00").getTime();
+
+			// Output the end date and time
+			// Format: Thứ Hai, 5 Tháng Một, 2022 3:37pm
+			function formatDateTime(date) {
+				var days = [
+					"Chủ Nhật",
+					"Thứ Hai",
+					"Thứ Ba",
+					"Thứ Tư",
+					"Thứ Năm",
+					"Thứ Sáu",
+					"Thứ Bảy",
+				];
+				var months = [
+					"Tháng Một",
+					"Tháng Hai",
+					"Tháng Ba",
+					"Tháng Tư",
+					"Tháng Năm",
+					"Tháng Sáu",
+					"Tháng Bảy",
+					"Tháng Tám",
+					"Tháng Chín",
+					"Tháng Mười",
+					"Tháng Mười Một",
+					"Tháng Mười Hai",
+				];
+				var day = days[date.getDay()];
+				var month = months[date.getMonth()];
+				var year = date.getFullYear();
+				var hour = date.getHours();
+				var minute = date.getMinutes();
+				var period = hour >= 12 ? "pm" : "am";
+				hour = hour % 12;
+				hour = hour ? hour : 12;
+				minute = minute < 10 ? "0" + minute : minute;
+				return `${day}, ${date.getDate()} ${month}, ${year} ${hour}:${minute}${period}`;
+			}
+
+			document.querySelector(".end-at").innerHTML = formatDateTime(
+				new Date(countDownDate)
+			);
+
+			// Update the count down every 1 second
+			var x = setInterval(function () {
+				// Get the current date and time
+				var now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				var distance = countDownDate - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor(
+					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				);
+				var minutes = Math.floor(
+					(distance % (1000 * 60 * 60)) / (1000 * 60)
+				);
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				// Add leading zero to single digit numbers
+				days = days < 10 ? "0" + days : days;
+				hours = hours < 10 ? "0" + hours : hours;
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+
+				// Display the result in the element with id="demo"
+				document.querySelector(".time:nth-child(1) span").innerHTML =
+					days;
+				document.querySelector(".time:nth-child(2) span").innerHTML =
+					hours;
+				document.querySelector(".time:nth-child(3) span").innerHTML =
+					minutes;
+				document.querySelector(".time:nth-child(4) span").innerHTML =
+					seconds;
+
+				// If the count down is finished, write some text
+				if (distance < 0) {
+					clearInterval(x);
+					document.querySelector(".timer").style.display = "none";
+					document.querySelector(".sale-end").style.display = "block";
+				}
+			}, 1000);
+		</script>
+	</body>
+</html>
