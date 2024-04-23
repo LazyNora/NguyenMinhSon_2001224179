@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 0</title>
+		<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        font-family: Arial, sans-serif;
+        background-color: #eee;
+      }
+			.container {
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				margin: 50px auto;
+				width: 65%;
+				min-width: 1000px;
+			}
+			.lienhe {
+				grid-column: 1 / span 3;
+				background-color: #fff;
+				padding: 20px;
+			}
+      .lienhe h1 {
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .lienhe p {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      .lienhe button {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+			.banner {
+				grid-column: 4 / span 3;
+			}
+			.banner img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+        object-position: left;
+			}
+			.tuyensinh {
+				grid-column: 1 / span 2;
+				grid-row: 2;
+				background-color: #ffff00;
+				text-align: center;
+			}
+			.giangvien {
+				grid-column: 3 / span 2;
+				grid-row: 2;
+				background-color: #fec0cd;
+				text-align: center;
+			}
+			.nghiencuukh {
+				grid-column: 5 / span 2;
+				grid-row: 2;
+				background-color: #008000;
+				text-align: center;
+			}
+      .tuyensinh, .giangvien, .nghiencuukh{
+        padding: 3px 25px 15px 25px;
+      }
+      .tuyensinh h2, .giangvien h2, .nghiencuukh h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .tuyensinh p, .giangvien p, .nghiencuukh p {
+        font-size: 16px;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="lienhe">
+				<h1>Trường Đại Học Công nghiệp Thực phẩm</h1>
+				<p>
+					Địa chỉ: 140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú,
+					TPHCM
+				</p>
+				<p>ĐT: 0287362819</p>
+				<button>Liên hệ</button>
+			</div>
+			<div class="banner">
+				<img src="./img/banner.jpg" alt="Chúc mừng năm mới 2019" />
+			</div>
+			<div class="tuyensinh">
+				<h2>Tuyển sinh</h2>
+				<p>
+					Đa dạng các hệ đào tạo, cam kết sinh viên có việc làm sau
+					khi tốt nghiệp. Học phí rẻ
+				</p>
+			</div>
+			<div class="giangvien">
+				<h2>Giảng viên</h2>
+				<p>Tuyển dụng liên tục. Chế độ đãi ngộ tốt, lương cao</p>
+			</div>
+			<div class="nghiencuukh">
+				<h2>Nghiên cứu khoa học</h2>
+				<p>
+					Hợp tác nghiên cứu giữa các trường đại học trên thế giới và
+					hợp tác nghiên cứu với doanh nghiệp
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
