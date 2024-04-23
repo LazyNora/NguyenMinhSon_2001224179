@@ -2,3 +2,4 @@
 **/*.pdf
 !**/assets/*.pdf
 *.rar
+*.zip
