@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 25</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous" />
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"></script>
+		<style>
+			.container {
+				max-width: 900px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container mb-3">
+			<h4>Nav-pills with contain Vertical</h4>
+			<div class="row">
+				<div class="col-3">
+					<div
+						class="nav flex-column nav-pills"
+						id="v-pills-tab"
+						role="tablist"
+						aria-orientation="vertical">
+						<!-- Use Button instead of Anchor for BS5 -->
+						<!-- data-bs-toggle & data-bs-target for data-toggle & href -->
+						<!-- other stuffs are for accessibility -->
+						<button
+							class="nav-link text-start active"
+							id="v-pills-home-tab"
+							data-bs-toggle="pill"
+							data-bs-target="#v-pills-home"
+							role="tab"
+							aria-controls="v-pills-home"
+							aria-selected="true">
+							Home
+						</button>
+						<button
+							class="nav-link text-start"
+							id="v-pills-profile-tab"
+							data-bs-toggle="pill"
+							data-bs-target="#v-pills-profile"
+							role="tab"
+							aria-controls="v-pills-profile"
+							aria-selected="false">
+							Profile
+						</button>
+						<button
+							class="nav-link text-start"
+							id="v-pills-messages-tab"
+							data-bs-toggle="pill"
+							data-bs-target="#v-pills-messages"
+							role="tab"
+							aria-controls="v-pills-messages"
+							aria-selected="false">
+							Messages
+						</button>
+						<button
+							class="nav-link text-start"
+							id="v-pills-settings-tab"
+							data-bs-toggle="pill"
+							data-bs-target="#v-pills-settings"
+							role="tab"
+							aria-controls="v-pills-settings"
+							aria-selected="false">
+							Settings
+						</button>
+					</div>
+				</div>
+				<div class="col-9">
+					<div class="tab-content" id="v-pills-tabContent">
+						<div
+							class="tab-pane fade show active"
+							role="tabpanel"
+							tabindex="0"
+							id="v-pills-home"
+							aria-labelledby="v-pills-home-tab">
+							Lorem ipsum dolor sit amet consectetur, adipisicing
+							elit. Id, sunt quos. Mollitia amet eos ad facere
+							cum? Corporis, aut dolore modi deleniti at accusamus
+							facilis harum quasi consequuntur eveniet pariatur
+							totam voluptate. Quos voluptate ut odit, unde quas
+							rem officiis! Lorem ipsum dolor sit amet consectetur
+							adipisicing elit. Incidunt voluptates quos soluta
+							sit sint aspernatur doloremque molestiae, blanditiis
+							voluptatum assumenda provident nobis quidem culpa,
+							dignissimos neque officiis, aliquid distinctio?
+							Suscipit esse autem fuga reiciendis, sit quasi
+							aliquid explicabo quo numquam!
+						</div>
+						<div
+							class="tab-pane fade"
+							role="tabpanel"
+							tabindex="0"
+							id="v-pills-profile"
+							aria-labelledby="v-pills-profile-tab">
+							Lorem ipsum dolor, sit amet consectetur adipisicing
+							elit. Corporis in tenetur, delectus quia quasi eum
+							eligendi accusamus molestiae quam, libero
+							consequuntur sapiente. Rerum quam ullam placeat quia
+							eos tempora, sed voluptas. Voluptates ad,
+							consequuntur autem quam sapiente natus rem est.
+							Lorem ipsum dolor, sit amet consectetur adipisicing
+							elit. Quam aut facilis nihil dolorum nemo
+							exercitationem. Enim unde tempore non consequatur ad
+							suscipit, placeat quidem modi vero! Magnam
+							reprehenderit dolorem facere.
+						</div>
+						<div
+							class="tab-pane fade"
+							role="tabpanel"
+							tabindex="0"
+							id="v-pills-messages"
+							aria-labelledby="v-pills-messages-tab">
+							Lorem ipsum, dolor sit amet consectetur adipisicing
+							elit. Nesciunt quibusdam corporis explicabo
+							voluptates soluta magnam officia accusamus optio
+							atque eveniet reprehenderit, vel obcaecati minima
+							nisi ipsam aut enim. Quisquam, praesentium. Ducimus
+							totam voluptatum nisi, qui aut obcaecati temporibus
+							nam cumque officiis neque id, quae, commodi
+							architecto eius consequuntur minus culpa similique
+							recusandae hic doloremque. Maiores a non excepturi
+							repellendus earum. Placeat voluptates assumenda
+							eligendi quidem odit quis porro suscipit culpa, illo
+							unde, alias omnis rerum tempora minima? Placeat, eos
+							similique nobis explicabo nemo ipsum nisi veritatis!
+							Hic commodi quam repudiandae!
+						</div>
+						<div
+							class="tab-pane fade"
+							role="tabpanel"
+							tabindex="0"
+							id="v-pills-settings"
+							aria-labelledby="v-pills-settings-tab">
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Beatae distinctio vitae ab, a praesentium quam
+							voluptatem atque quo officia fugit rerum non fugiat
+							in culpa qui, vel dolor perferendis minus. Sequi,
+							harum assumenda sint voluptatum culpa nam magni
+							atque quasi, aperiam consequuntur fugiat nostrum,
+							autem laboriosam ipsa facere ab officia! Delectus ex
+							excepturi deleniti laborum optio nam unde, iusto
+							labore?
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h4>Nav-pills width contain Horizontal</h4>
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<li class="nav-item">
+					<a
+						id="pills-home-tab"
+						data-bs-toggle="pill"
+						href="#pills-home"
+						class="nav-link active"
+						aria-current="page"
+						aria-controls="pills-home"
+						>Home</a
+					>
+				</li>
+				<li class="nav-item">
+					<a
+						id="pills-profile-tab"
+						data-bs-toggle="pill"
+						href="#pills-profile"
+						class="nav-link"
+						aria-controls="pills-profile"
+						>Profile</a
+					>
+				</li>
+				<li class="nav-item">
+					<a
+						id="pills-contact-tab"
+						data-bs-toggle="pill"
+						href="#pills-contact"
+						class="nav-link"
+						aria-controls="pills-contact"
+						>Contact</a
+					>
+				</li>
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+				<div
+					aria-labelledby="pills-home-tab"
+					id="pills-home"
+					class="tab-pane fade text-justify show active"
+					role="tabpanel">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+					modi blanditiis, corrupti illum sequi laborum fugiat!
+					Pariatur quasi tenetur est, atque eaque provident qui
+					corrupti rerum molestiae ad reprehenderit et. Tempore
+					asperiores similique doloremque eveniet, porro aperiam in
+					veniam adipisci nisi ex provident optio qui vel, enim
+					pariatur aliquam voluptatum, id tempora totam a quod nulla
+					assumenda. Recusandae, esse? Vel. Asperiores inventore,
+					tenetur est culpa quidem autem maxime dolorem similique
+					officiis placeat totam omnis minus atque ex aliquid
+					accusantium quam quae? Possimus non suscipit vero libero eos
+					harum accusamus saepe! Aperiam necessitatibus incidunt
+					veritatis laboriosam. Illo qui beatae commodi, esse
+					voluptatem sunt sapiente ea minima. Quam, voluptate,
+					obcaecati cumque soluta et quaerat delectus repellat illo,
+					sunt asperiores ea cum? Reprehenderit? Rerum numquam quasi
+					maiores velit, accusantium iste. Accusamus eum at quae ex
+					nemo recusandae nobis ipsum neque molestiae molestias, fugit
+					rerum quaerat labore ullam dicta sunt blanditiis quod.
+					Autem, tempora. Aliquid, non praesentium. Blanditiis
+					deleniti expedita explicabo aliquid delectus officia!
+					Dolorum nam nobis sit fugiat blanditiis, autem animi,
+					pariatur incidunt odit qui illo itaque veniam, repellat
+					voluptatibus dolor ipsum fugit! Tempora magnam ratione non
+					ipsam nesciunt numquam odio eveniet quasi?
+				</div>
+				<div
+					aria-labelledby="pills-profile-tab"
+					id="pills-profile"
+					class="tab-pane fade text-justify"
+					role="tabpanel">
+					Nostrum ipsam culpa perferendis iste sequi itaque quae
+					distinctio quam inventore fuga laboriosam amet asperiores
+					consectetur tempora, quidem repellendus nesciunt! Aliquam
+					tempore quasi culpa in odio adipisci veritatis, consequuntur
+					amet magni rerum, voluptatem repudiandae sapiente eos sint
+					est sit minima dignissimos harum repellat deleniti ratione
+					laborum voluptatibus, officia dolores! Est. Cupiditate
+					tenetur officia dolores sequi omnis voluptates, error neque
+					explicabo beatae odit et. Totam facilis debitis, tenetur
+					modi sint, non explicabo nobis fuga dolorem, quidem placeat
+					voluptatibus dolorum reiciendis consequatur. Vero obcaecati
+					dignissimos consequuntur doloribus maxime inventore libero
+					recusandae dolore, fugiat dolorem delectus officiis labore
+					ut corporis laudantium! Praesentium dicta facilis ipsam ab,
+					adipisci perspiciatis a natus nesciunt voluptas nam.
+				</div>
+				<div
+					aria-labelledby="pills-contact-tab"
+					id="pills-contact"
+					class="tab-pane fade text-justify"
+					role="tabpanel">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Perferendis esse labore eaque repudiandae sapiente et cum,
+					quam molestias dolorum itaque commodi error consequatur.
+					Obcaecati aperiam laboriosam, placeat recusandae labore
+					accusantium non ab corrupti corporis. Assumenda inventore,
+					facere sit veritatis ducimus harum porro suscipit pariatur
+					aliquam vero exercitationem recusandae autem quae neque
+					deserunt quibusdam iure placeat dignissimos quia hic, soluta
+					veniam odio atque? Iure laborum, voluptatum fugiat veniam
+					dolores corporis natus asperiores sunt maxime. Culpa
+					voluptatum soluta impedit iure ad natus similique odit
+					dolores fuga cum. Exercitationem harum laborum veniam
+					quaerat, vitae cupiditate unde nesciunt nihil odit, modi
+					necessitatibus delectus. Delectus!
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
